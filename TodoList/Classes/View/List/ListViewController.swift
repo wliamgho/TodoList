@@ -9,6 +9,8 @@
 import UIKit
 
 class ListViewController: UIViewController, ListView {
+  @IBOutlet weak var tableView: UITableView!
+
   var event: ListEvent?
 
   override func viewDidLoad() {

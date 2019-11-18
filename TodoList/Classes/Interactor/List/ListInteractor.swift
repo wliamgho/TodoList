@@ -10,4 +10,14 @@ import Foundation
 
 class ListInteractor: ListInteractorInput {
   weak var output: ListInteractorOutput?
+
+  private let coreDataManager: CoreDataManager
+
+  init(coreDataManager: CoreDataManager) {
+    self.coreDataManager = coreDataManager
+  }
+
+  func fetchTodoList() {
+    // output
+  }
 }

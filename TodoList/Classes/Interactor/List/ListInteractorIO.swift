@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol ListInteractorInput: class {}
+protocol ListInteractorInput: class {
+  func fetchTodoList()
+}
 
 protocol ListInteractorOutput: class {}

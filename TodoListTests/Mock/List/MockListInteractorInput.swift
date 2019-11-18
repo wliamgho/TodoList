@@ -10,4 +10,10 @@ import XCTest
 
 @testable import TodoList
 class MockListInteractorInput: ListInteractorInput {
+  var invokedFetchTodoList = false
+  var invokedFetchTodoListCount = 0
+  func fetchTodoList() {
+    invokedFetchTodoList = true
+    invokedFetchTodoListCount += 1
+  }
 }

@@ -19,6 +19,4 @@ protocol Entity {
   static func newEntity(context: NSManagedObjectContext) -> Entity?
 
   func update(json: [String: Any]) -> Entity
-
-  func toJson() -> [String: Any]
 }
