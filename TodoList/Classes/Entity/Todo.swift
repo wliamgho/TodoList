@@ -18,7 +18,7 @@ extension TodoList: Entity {
     return String(describing: self)
   }
 
-  static func parse(json: [String : Any], context: NSManagedObjectContext) -> Entity? {
+  static func create(json: [String : Any], context: NSManagedObjectContext) -> Entity? {
     guard let todo = NSEntityDescription.insertNewObject(forEntityName: entityName(),
                                                          into: context) as? TodoList else {
       return nil

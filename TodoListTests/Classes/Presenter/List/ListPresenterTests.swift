@@ -48,7 +48,7 @@ class ListPresenterTests: XCTestCase {
                                  TodoListKey.title.rawValue: "Test"]
     let context = mockPersistentContainer?.container.viewContext
 
-    guard let todo = TodoList.parse(json: sampleData, context: context!) as? TodoList else {
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
       XCTFail("Failed creating TodoList Entity")
       return
     }

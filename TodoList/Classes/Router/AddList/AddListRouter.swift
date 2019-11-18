@@ -11,7 +11,7 @@ import UIKit
 class AddListRouter: Router {
   var viewController: UIViewController {
     let controller = AddListViewController()
-    let interactor = AddListInteractor()
+    let interactor = AddListInteractor(coreDataManager: coreDataManager)
     let presenter = AddListPresenter(view: controller, interactor: interactor, router: self)
 
     controller.event = presenter

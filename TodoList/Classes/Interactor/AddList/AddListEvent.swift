@@ -9,4 +9,5 @@
 import Foundation
 
 protocol AddListEvent: class {
+  func addListTapped(data: [String: Any])
 }

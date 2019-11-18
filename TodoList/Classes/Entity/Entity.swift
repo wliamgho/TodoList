@@ -12,7 +12,7 @@ import CoreData
 protocol Entity {
   static func entityName() -> String
 
-  static func parse(json: [String: Any], context: NSManagedObjectContext) -> Entity?
+  static func create(json: [String: Any], context: NSManagedObjectContext) -> Entity?
 
   func same(entity: Entity?) -> Bool
 

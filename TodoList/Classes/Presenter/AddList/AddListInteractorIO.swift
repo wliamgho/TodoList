@@ -8,6 +8,12 @@
 
 import Foundation
 
-protocol AddListInteractorInput: class {}
+protocol AddListInteractorInput: class {
+  func addTodoList(data: [String: Any])
+}
 
-protocol AddListInteractorOutput: class {}
+protocol AddListInteractorOutput: class {
+  func failedToAddNewList(errMessage: String)
+
+  func addedNewList(todoList: TodoList)
+}
