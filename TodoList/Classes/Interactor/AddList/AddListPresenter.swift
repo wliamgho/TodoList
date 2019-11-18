@@ -13,9 +13,23 @@ class AddListPresenter: AddListEvent, AddListInteractorOutput {
   let interactor: AddListInteractorInput
   let router: AddListRouter
 
-  init(view: AddListViewController, interactor: AddListInteractorInput, router: AddListRouter) {
+  init(view: AddListView, interactor: AddListInteractorInput, router: AddListRouter) {
     self.view = view
     self.interactor = interactor
     self.router = router
+  }
+
+  // MARK: - Event
+  func addListTapped(data: [String : Any]) {
+    interactor.addTodoList(data: data)
+  }
+
+  // MARK: - Output
+  func failedToAddNewList(errMessage: String) {
+    view?.showInformation(withMessage: errMessage)
+  }
+
+  func addedNewList(todoList: TodoList) {
+    view?.showInformation(withMessage: "Success add new list: \(todoList.title ?? "")")
   }
 }

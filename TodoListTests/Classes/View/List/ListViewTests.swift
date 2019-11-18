@@ -36,7 +36,7 @@ class ListViewTests: XCTestCase {
   }
 
   func testFetchTodoList() {
-    view?.viewDidLoad()
+    view?.viewWillAppear(false)
 
     XCTAssert(mockEvent?.invokedFetchTodoList == true, "Expect fetch todo list is called")
     XCTAssert(mockEvent?.invokedFetchTodoListCount == 1, "Expect fetch todo list is called once")

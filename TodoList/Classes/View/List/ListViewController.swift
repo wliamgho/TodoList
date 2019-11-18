@@ -31,12 +31,14 @@ class ListViewController: UIViewController, ListView {
     super.viewWillAppear(animated)
 
     self.title = "TodoList"
+
+    event?.fetchTodoList()
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    event?.fetchTodoList()
+//    event?.fetchTodoList()
 
     self.navigationItem.rightBarButtonItem = addBarButton
 

@@ -31,17 +31,6 @@ class ListInteractorTests: XCTestCase {
   }
 
   func testFetchTodoList() {
-    let id: Int64 = 1
-//    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
-//                                 TodoListKey.title.rawValue: "Test"]
-    let sampleData: [String: Any] = [:]
-    let context = mockPersistentContainer?.container.viewContext
-
-    guard let todoList = TodoList.parse(json: sampleData, context: context!) as? TodoList else {
-      XCTFail("Failed creating TodoList Entity")
-      return
-    }
-
     guard let todo = mockCoreDataManager?.fetch(ofType: TodoList.self) as? [TodoList] else {
       XCTFail("Failed creating TodoList Entity")
       return

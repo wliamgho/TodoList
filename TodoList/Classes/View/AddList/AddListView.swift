@@ -9,4 +9,5 @@
 import Foundation
 
 protocol AddListView: class {
+  func showInformation(withMessage: String)
 }

@@ -9,8 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
+                <outlet property="noteTextField" destination="wjh-LY-3El" id="yIT-bp-4CJ"/>
                 <outlet property="saveButton" destination="bWG-z8-KTT" id="1wQ-rh-1hx"/>
-                <outlet property="textField" destination="wjh-LY-3El" id="fmd-ca-fVs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,6 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to noted?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-sl-TV4">
+                    <rect key="frame" x="24" y="244" width="216.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjh-LY-3El">
                     <rect key="frame" x="24" y="273" width="366" height="50"/>
                     <constraints>
@@ -27,12 +33,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to note?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJT-sl-TV4">
-                    <rect key="frame" x="24" y="244" width="207" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWG-z8-KTT">
                     <rect key="frame" x="177" y="347" width="60" height="40"/>
                     <constraints>
@@ -40,6 +40,9 @@
                         <constraint firstAttribute="height" constant="40" id="tJi-Q0-JXn"/>
                     </constraints>
                     <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="saveButtonTapped" destination="-1" eventType="touchUpInside" id="LiZ-QK-Mcf"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

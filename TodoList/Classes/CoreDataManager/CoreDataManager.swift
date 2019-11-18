@@ -18,8 +18,7 @@ class CoreDataManager: NSObject {
 
   // MARK: - Core Data Creating Entity with Data
   func createEntity<T: Entity>(ofType: T.Type, withData data: [String: Any]) -> T? {
-    let entity = T.parse(json: data, context: persistentContainer.viewContext)
-
+    let entity = T.create(json: data, context: persistentContainer.viewContext)
     return entity as? T
   }
 
