@@ -12,4 +12,6 @@ protocol ListInteractorInput: class {
   func fetchTodoList()
 }
 
-protocol ListInteractorOutput: class {}
+protocol ListInteractorOutput: class {
+  func getTodoList(todo: [TodoList])
+}

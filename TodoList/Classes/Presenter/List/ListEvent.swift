@@ -8,4 +8,6 @@
 
 import Foundation
 
-protocol ListEvent: class {}
+protocol ListEvent: class {
+  func fetchTodoList()
+}

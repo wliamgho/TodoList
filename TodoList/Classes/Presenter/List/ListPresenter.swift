@@ -18,4 +18,14 @@ class ListPresenter: ListEvent, ListInteractorOutput {
     self.interactor = interactor
     self.router = router
   }
+
+  // MARK: - Event
+  func fetchTodoList() {
+    interactor.fetchTodoList()
+  }
+
+  // MARK: - Output
+  func getTodoList(todo: [TodoList]) {
+    view?.showTodoList(todoList: todo)
+  }
 }

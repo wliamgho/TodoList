@@ -18,6 +18,7 @@ class ListInteractor: ListInteractorInput {
   }
 
   func fetchTodoList() {
-    // output
+    let list = coreDataManager.fetch(ofType: TodoList.self)
+    output?.getTodoList(todo: list)
   }
 }

@@ -24,8 +24,7 @@ extension TodoList: Entity {
       return nil
     }
 
-    todo.id = json["id"] as? Int64 ?? 0
-    todo.title = json["title"] as? String
+    todo.update(json: json)
 
     return todo
   }

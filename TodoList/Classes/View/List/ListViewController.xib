@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
+                <outlet property="addBarButton" destination="nLB-1O-cuy" id="nBQ-u6-eYn"/>
                 <outlet property="tableView" destination="sIF-8I-ffk" id="Scc-y3-4pT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,6 +21,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sIF-8I-ffk">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ayi-aa-gFZ"/>
+                        <outlet property="delegate" destination="-1" id="Nxl-xe-5aW"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -31,5 +36,10 @@
             </constraints>
             <point key="canvasLocation" x="139" y="135"/>
         </view>
+        <barButtonItem style="plain" systemItem="add" id="nLB-1O-cuy">
+            <connections>
+                <action selector="AddButtonTapped:" destination="-1" id="kWk-UJ-Hnq"/>
+            </connections>
+        </barButtonItem>
     </objects>
 </document>
