@@ -38,7 +38,7 @@
         </view>
         <barButtonItem style="plain" systemItem="add" id="nLB-1O-cuy">
             <connections>
-                <action selector="AddButtonTapped:" destination="-1" id="kWk-UJ-Hnq"/>
+                <action selector="addButtonTapped" destination="-1" id="Wwu-Po-RLV"/>
             </connections>
         </barButtonItem>
     </objects>

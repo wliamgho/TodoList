@@ -10,4 +10,6 @@ import Foundation
 
 protocol ListEvent: class {
   func fetchTodoList()
+
+  func addButtonTapped(view: ListViewController)
 }

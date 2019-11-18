@@ -42,11 +42,18 @@ class ListViewTests: XCTestCase {
     XCTAssert(mockEvent?.invokedFetchTodoListCount == 1, "Expect fetch todo list is called once")
   }
 
+  func testAddListTapped() {
+    view?.addButtonTapped()
+
+    XCTAssert(mockEvent?.invokedAddButtonTapped == true, "Expect add button is called")
+    XCTAssert(mockEvent?.invokedAddButtonTappedCount == 1, "Expect add button is called once")
+    XCTAssert(mockEvent?.invokedAddButtonTappedParameters?.view == view, "Expect add button param is ListViewController")
+  }
+
   func testPerformanceExample() {
       // This is an example of a performance test case.
       self.measure {
           // Put the code you want to measure the time of here.
       }
   }
-
 }

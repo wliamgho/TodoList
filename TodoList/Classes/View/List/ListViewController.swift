@@ -50,7 +50,8 @@ class ListViewController: UIViewController, ListView {
     tableView.reloadData()
   }
 
-  @IBAction func AddButtonTapped(_ sender: Any) {
+  @IBAction func addButtonTapped() {
+    event?.addButtonTapped(view: self)
   }
 }
 

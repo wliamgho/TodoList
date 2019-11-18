@@ -61,6 +61,15 @@ class ListPresenterTests: XCTestCase {
     XCTAssert(mockView?.invokedShowTodoListParameters?.todoList.contains(todo) ?? false, "Expect todo list parameters contains is same with todo")
   }
 
+  func testAddListButtonTapped() {
+    let mockView = MockListViewController()
+    presenter?.addButtonTapped(view: mockView)
+
+    XCTAssert(mockRouter?.invokedPushToAddListRouter == true, "Expect push to add list router is called")
+    XCTAssert(mockRouter?.invokedPushToAddListRouterCount == 1, "Expect push to add list router is called once")
+    XCTAssert(mockRouter?.invokedPushToAddListRouterParameters?.viewController == mockView, "Expect push to add list router param is same with mockView")
+  }
+
   func testPerformanceExample() {
       // This is an example of a performance test case.
     self.measure {

@@ -13,7 +13,7 @@ class AddListPresenter: AddListEvent, AddListInteractorOutput {
   let interactor: AddListInteractorInput
   let router: AddListRouter
 
-  init(view: AddListView, interactor: AddListInteractorInput, router: AddListRouter) {
+  init(view: AddListViewController, interactor: AddListInteractorInput, router: AddListRouter) {
     self.view = view
     self.interactor = interactor
     self.router = router

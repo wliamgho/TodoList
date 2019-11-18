@@ -52,6 +52,7 @@
 		5E950A7D2382A6110057402A /* MockAddListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A7C2382A6110057402A /* MockAddListInteractorInput.swift */; };
 		5E950A7F2382A6290057402A /* MockAddListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A7E2382A6290057402A /* MockAddListInteractorOutput.swift */; };
 		5E950A812382A64B0057402A /* MockAddListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A802382A64B0057402A /* MockAddListRouter.swift */; };
+		5E950A832382AA970057402A /* MockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A822382AA970057402A /* MockListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		5E950A7C2382A6110057402A /* MockAddListInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddListInteractorInput.swift; sourceTree = "<group>"; };
 		5E950A7E2382A6290057402A /* MockAddListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddListInteractorOutput.swift; sourceTree = "<group>"; };
 		5E950A802382A64B0057402A /* MockAddListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddListRouter.swift; sourceTree = "<group>"; };
+		5E950A822382AA970057402A /* MockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				5E9509F123827EAC0057402A /* MockListView.swift */,
+				5E950A822382AA970057402A /* MockListViewController.swift */,
 				5E9509F323827ECB0057402A /* MockListEvent.swift */,
 				5E9509F523827EE40057402A /* MockListInteractorInput.swift */,
 				5E9509F723827EF90057402A /* MockListInteractorOutput.swift */,
@@ -645,6 +648,7 @@
 			files = (
 				5E9509F423827ECB0057402A /* MockListEvent.swift in Sources */,
 				5E950A792382A5DE0057402A /* MockAddListView.swift in Sources */,
+				5E950A832382AA970057402A /* MockListViewController.swift in Sources */,
 				5E950A7B2382A5F80057402A /* MockAddListEvent.swift in Sources */,
 				5E950A7D2382A6110057402A /* MockAddListInteractorInput.swift in Sources */,
 				5E950A4A238287320057402A /* MockCoreDataManager.swift in Sources */,

@@ -22,4 +22,11 @@ class ListRouter: Router {
 
     return navigationController
   }
+
+  func pushToAddListRouter(viewController: UIViewController?) {
+    let addListRouter = AddListRouter()
+
+    viewController?.navigationController?.pushViewController(addListRouter.viewController,
+                                                            animated: true)
+  }
 }
