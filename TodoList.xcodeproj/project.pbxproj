@@ -32,6 +32,7 @@
 		5E950A412382827E0057402A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A402382827E0057402A /* Entity.swift */; };
 		5E950A45238285030057402A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A44238285030057402A /* Todo.swift */; };
 		5E950A4A238287320057402A /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A49238287320057402A /* MockCoreDataManager.swift */; };
+		5E950A4D238288BD0057402A /* MockPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A4C238288BD0057402A /* MockPersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		5E950A402382827E0057402A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		5E950A44238285030057402A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5E950A49238287320057402A /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		5E950A4C238288BD0057402A /* MockPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistentContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 		5E9509ED23827E7E0057402A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A4B238288A40057402A /* PersistentContainer */,
 				5E950A46238287170057402A /* CoreData */,
 				5E9509EE23827E9C0057402A /* List */,
 			);
@@ -297,6 +300,14 @@
 				5E950A49238287320057402A /* MockCoreDataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5E950A4B238288A40057402A /* PersistentContainer */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A4C238288BD0057402A /* MockPersistentContainer.swift */,
+			);
+			path = PersistentContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +468,7 @@
 				5E9509F223827EAC0057402A /* MockListView.swift in Sources */,
 				5E9509F823827EF90057402A /* MockListInteractorOutput.swift in Sources */,
 				5E9509FA23827F0D0057402A /* MockListRouter.swift in Sources */,
+				5E950A4D238288BD0057402A /* MockPersistentContainer.swift in Sources */,
 				5E2DBEC7238275D90004F64F /* TodoListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
