@@ -18,7 +18,15 @@ class ListRouter: Router {
 
     controller.event = presenter
     interactor.output = presenter
+    presenter.view = controller
 
     return navigationController
+  }
+
+  func pushToAddListRouter(viewController: UIViewController?) {
+    let addListRouter = AddListRouter()
+
+    viewController?.navigationController?.pushViewController(addListRouter.viewController,
+                                                            animated: true)
   }
 }

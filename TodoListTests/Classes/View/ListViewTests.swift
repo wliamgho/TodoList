@@ -30,11 +30,24 @@ class ListViewTests: XCTestCase {
     mockCoreDataManager?.deleteData(TodoList.entityName())
   }
 
+  func testInitWithCoder() {
+    let view = ListViewController(coder: NSCoder())
+    XCTAssertNil(view, "Expect list view controller init is not with NSCoder")
+  }
+
   func testFetchTodoList() {
     view?.viewDidLoad()
 
     XCTAssert(mockEvent?.invokedFetchTodoList == true, "Expect fetch todo list is called")
     XCTAssert(mockEvent?.invokedFetchTodoListCount == 1, "Expect fetch todo list is called once")
+  }
+
+  func testAddListTapped() {
+    view?.addButtonTapped()
+
+    XCTAssert(mockEvent?.invokedAddButtonTapped == true, "Expect add button is called")
+    XCTAssert(mockEvent?.invokedAddButtonTappedCount == 1, "Expect add button is called once")
+    XCTAssert(mockEvent?.invokedAddButtonTappedParameters?.view == view, "Expect add button param is ListViewController")
   }
 
   func testPerformanceExample() {
@@ -43,5 +56,4 @@ class ListViewTests: XCTestCase {
           // Put the code you want to measure the time of here.
       }
   }
-
 }

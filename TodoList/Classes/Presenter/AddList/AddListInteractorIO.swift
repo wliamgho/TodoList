@@ -1,5 +1,5 @@
 //
-//  ListEvent.swift
+//  AddListInteractorIO.swift
 //  TodoList
 //
 //  Created by William on 18/11/19.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol ListEvent: class {
-  func fetchTodoList()
+protocol AddListInteractorInput: class {}
 
-  func addButtonTapped(view: ListViewController)
-}
+protocol AddListInteractorOutput: class {}
