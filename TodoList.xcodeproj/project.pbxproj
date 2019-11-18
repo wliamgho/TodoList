@@ -39,6 +39,14 @@
 		5E950A5C23829BCA0057402A /* ListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A5B23829BCA0057402A /* ListViewTests.swift */; };
 		5E950A6123829DBE0057402A /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A5F23829DBE0057402A /* ListItemCell.swift */; };
 		5E950A6223829DBE0057402A /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E950A6023829DBE0057402A /* ListItemCell.xib */; };
+		5E950A662382A42C0057402A /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A642382A42C0057402A /* AddListViewController.swift */; };
+		5E950A672382A42C0057402A /* AddListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E950A652382A42C0057402A /* AddListViewController.xib */; };
+		5E950A6A2382A43D0057402A /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A692382A43D0057402A /* AddListPresenter.swift */; };
+		5E950A6C2382A4430057402A /* AddListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A6B2382A4430057402A /* AddListEvent.swift */; };
+		5E950A6F2382A45D0057402A /* AddListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */; };
+		5E950A712382A4790057402A /* AddListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A702382A4790057402A /* AddListInteractor.swift */; };
+		5E950A732382A4AB0057402A /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A722382A4AB0057402A /* AddListView.swift */; };
+		5E950A762382A4E20057402A /* AddListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A752382A4E20057402A /* AddListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +105,14 @@
 		5E950A5B23829BCA0057402A /* ListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTests.swift; sourceTree = "<group>"; };
 		5E950A5F23829DBE0057402A /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		5E950A6023829DBE0057402A /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
+		5E950A642382A42C0057402A /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
+		5E950A652382A42C0057402A /* AddListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddListViewController.xib; sourceTree = "<group>"; };
+		5E950A692382A43D0057402A /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
+		5E950A6B2382A4430057402A /* AddListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListEvent.swift; sourceTree = "<group>"; };
+		5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListInteractorIO.swift; sourceTree = "<group>"; };
+		5E950A702382A4790057402A /* AddListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListInteractor.swift; sourceTree = "<group>"; };
+		5E950A722382A4AB0057402A /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		5E950A752382A4E20057402A /* AddListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +218,7 @@
 		5E9509D623827C3F0057402A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A632382A41A0057402A /* AddList */,
 				5E9509DB23827C660057402A /* List */,
 			);
 			path = View;
@@ -210,6 +227,7 @@
 		5E9509D723827C430057402A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A6D2382A4490057402A /* AddList */,
 				5E9509E323827CF30057402A /* List */,
 			);
 			path = Interactor;
@@ -218,6 +236,7 @@
 		5E9509D823827C4D0057402A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A682382A4320057402A /* AddList */,
 				5E9509DE23827CC50057402A /* List */,
 			);
 			path = Presenter;
@@ -238,6 +257,7 @@
 			children = (
 				5E9509E923827D420057402A /* Router.swift */,
 				5E9509E823827D3B0057402A /* List */,
+				5E950A742382A4D50057402A /* AddList */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -400,6 +420,44 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5E950A632382A41A0057402A /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A722382A4AB0057402A /* AddListView.swift */,
+				5E950A642382A42C0057402A /* AddListViewController.swift */,
+				5E950A652382A42C0057402A /* AddListViewController.xib */,
+			);
+			path = AddList;
+			sourceTree = "<group>";
+		};
+		5E950A682382A4320057402A /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A692382A43D0057402A /* AddListPresenter.swift */,
+				5E950A6B2382A4430057402A /* AddListEvent.swift */,
+			);
+			name = AddList;
+			path = ../Interactor/AddList;
+			sourceTree = "<group>";
+		};
+		5E950A6D2382A4490057402A /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */,
+				5E950A702382A4790057402A /* AddListInteractor.swift */,
+			);
+			name = AddList;
+			path = ../Presenter/AddList;
+			sourceTree = "<group>";
+		};
+		5E950A742382A4D50057402A /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A752382A4E20057402A /* AddListRouter.swift */,
+			);
+			path = AddList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E950A672382A42C0057402A /* AddListViewController.xib in Resources */,
 				5E950A6223829DBE0057402A /* ListItemCell.xib in Resources */,
 				5E2DBEBC238275D90004F64F /* LaunchScreen.storyboard in Resources */,
 				5E2DBEB9238275D90004F64F /* Assets.xcassets in Resources */,
@@ -532,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E950A6C2382A4430057402A /* AddListEvent.swift in Sources */,
 				5E9509E523827D070057402A /* ListInteractorIO.swift in Sources */,
 				5E9509E023827CCB0057402A /* ListPresenter.swift in Sources */,
 				5E9509DD23827C710057402A /* ListView.swift in Sources */,
@@ -541,12 +601,18 @@
 				5E950A3F238282450057402A /* CoreDataManager.swift in Sources */,
 				5E950A45238285030057402A /* Todo.swift in Sources */,
 				5E2DBEB0238275D50004F64F /* AppDelegate.swift in Sources */,
+				5E950A762382A4E20057402A /* AddListRouter.swift in Sources */,
 				5E9509D223827BE80057402A /* ListViewController.swift in Sources */,
+				5E950A662382A42C0057402A /* AddListViewController.swift in Sources */,
+				5E950A6A2382A43D0057402A /* AddListPresenter.swift in Sources */,
 				5E9509E723827D1E0057402A /* ListInteractor.swift in Sources */,
+				5E950A712382A4790057402A /* AddListInteractor.swift in Sources */,
 				5E950A412382827E0057402A /* Entity.swift in Sources */,
 				5E9509EC23827D6F0057402A /* ListRouter.swift in Sources */,
 				5E2DBEB2238275D50004F64F /* SceneDelegate.swift in Sources */,
+				5E950A6F2382A45D0057402A /* AddListInteractorIO.swift in Sources */,
 				5E950A6123829DBE0057402A /* ListItemCell.swift in Sources */,
+				5E950A732382A4AB0057402A /* AddListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

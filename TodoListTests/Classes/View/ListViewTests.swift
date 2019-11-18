@@ -30,6 +30,11 @@ class ListViewTests: XCTestCase {
     mockCoreDataManager?.deleteData(TodoList.entityName())
   }
 
+  func testInitWithCoder() {
+    let view = ListViewController(coder: NSCoder())
+    XCTAssertNil(view, "Expect list view controller init is not with NSCoder")
+  }
+
   func testFetchTodoList() {
     view?.viewDidLoad()
 

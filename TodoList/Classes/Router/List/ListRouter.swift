@@ -18,6 +18,7 @@ class ListRouter: Router {
 
     controller.event = presenter
     interactor.output = presenter
+    presenter.view = controller
 
     return navigationController
   }
