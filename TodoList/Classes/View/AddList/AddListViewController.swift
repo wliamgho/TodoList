@@ -9,6 +9,9 @@
 import UIKit
 
 class AddListViewController: UIViewController, AddListView {
+  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var saveButton: UIButton!
+
   var event: AddListEvent?
 
   override func viewDidLoad() {
