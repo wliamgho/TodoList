@@ -27,6 +27,10 @@
 		5E9509F623827EE40057402A /* MockListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9509F523827EE40057402A /* MockListInteractorInput.swift */; };
 		5E9509F823827EF90057402A /* MockListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9509F723827EF90057402A /* MockListInteractorOutput.swift */; };
 		5E9509FA23827F0D0057402A /* MockListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9509F923827F0D0057402A /* MockListRouter.swift */; };
+		5E950A3C238280080057402A /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A3A238280080057402A /* TodoList.xcdatamodeld */; };
+		5E950A3F238282450057402A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A3E238282450057402A /* CoreDataManager.swift */; };
+		5E950A412382827E0057402A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A402382827E0057402A /* Entity.swift */; };
+		5E950A45238285030057402A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A44238285030057402A /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		5E9509F523827EE40057402A /* MockListInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListInteractorInput.swift; sourceTree = "<group>"; };
 		5E9509F723827EF90057402A /* MockListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListInteractorOutput.swift; sourceTree = "<group>"; };
 		5E9509F923827F0D0057402A /* MockListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListRouter.swift; sourceTree = "<group>"; };
+		5E950A3B238280080057402A /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
+		5E950A3E238282450057402A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5E950A402382827E0057402A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		5E950A44238285030057402A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 		5E9509D423827C230057402A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A3D238282350057402A /* CoreDataManager */,
 				5E2DBEAF238275D50004F64F /* AppDelegate.swift */,
 				5E2DBEB1238275D50004F64F /* SceneDelegate.swift */,
 				5E9509DA23827C560057402A /* Router */,
@@ -199,6 +208,9 @@
 		5E9509D923827C510057402A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A3A238280080057402A /* TodoList.xcdatamodeld */,
+				5E950A402382827E0057402A /* Entity.swift */,
+				5E950A44238285030057402A /* Todo.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -266,6 +278,14 @@
 				5E9509F923827F0D0057402A /* MockListRouter.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		5E950A3D238282350057402A /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A3E238282450057402A /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,9 +424,13 @@
 				5E9509DD23827C710057402A /* ListView.swift in Sources */,
 				5E9509E223827CDE0057402A /* ListEvent.swift in Sources */,
 				5E9509EA23827D420057402A /* Router.swift in Sources */,
+				5E950A3C238280080057402A /* TodoList.xcdatamodeld in Sources */,
+				5E950A3F238282450057402A /* CoreDataManager.swift in Sources */,
+				5E950A45238285030057402A /* Todo.swift in Sources */,
 				5E2DBEB0238275D50004F64F /* AppDelegate.swift in Sources */,
 				5E9509D223827BE80057402A /* ListViewController.swift in Sources */,
 				5E9509E723827D1E0057402A /* ListInteractor.swift in Sources */,
+				5E950A412382827E0057402A /* Entity.swift in Sources */,
 				5E9509EC23827D6F0057402A /* ListRouter.swift in Sources */,
 				5E2DBEB2238275D50004F64F /* SceneDelegate.swift in Sources */,
 			);
@@ -734,6 +758,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E950A3A238280080057402A /* TodoList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E950A3B238280080057402A /* TodoList.xcdatamodel */,
+			);
+			currentVersion = 5E950A3B238280080057402A /* TodoList.xcdatamodel */;
+			path = TodoList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5E2DBEA4238275D50004F64F /* Project object */;
 }
