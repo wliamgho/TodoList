@@ -69,7 +69,7 @@ class AddListPresenterTests: XCTestCase {
 
     XCTAssert(mockView?.invokedShowInformation == true, "Expect show success add new list is called")
     XCTAssert(mockView?.invokedShowInformationCount == 1, "Expect show success add new list is called once")
-    XCTAssert(mockView?.invokedShowInformationParameters?.withMessage == "Success add new list: \(todo.title)" , "Expect show success add list params with message ")
+    XCTAssert(mockView?.invokedShowInformationParameters?.withMessage == "Success add new list: \(todo.title ?? "")" , "Expect show success add list params with message ")
   }
 
   func testPerformanceExample() {
