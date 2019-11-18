@@ -11,7 +11,7 @@ import UIKit
 class ListRouter: Router {
   var viewController: UIViewController {
     let controller = ListViewController()
-    let interactor = ListInteractor()
+    let interactor = ListInteractor(coreDataManager: coreDataManager)
     let presenter = ListPresenter(view: controller, interactor: interactor, router: self)
 
     let navigationController = UINavigationController(rootViewController: controller)

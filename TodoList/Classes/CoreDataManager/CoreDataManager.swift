@@ -24,7 +24,7 @@ class CoreDataManager: NSObject {
   }
 
   // MARK: - Core Data Creating Entity
-  func createEntity<T: Entity>(ofTyoe: T.Type) -> T? {
+  func createEntity<T: Entity>(ofType: T.Type) -> T? {
     let newEntity = T.newEntity(context: persistentContainer.viewContext)
 
     return newEntity as? T

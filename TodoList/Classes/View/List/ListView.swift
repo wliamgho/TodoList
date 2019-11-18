@@ -8,4 +8,6 @@
 
 import Foundation
 
-protocol ListView: class {}
+protocol ListView: class {
+  func showTodoList(todoList: [TodoList])
+}

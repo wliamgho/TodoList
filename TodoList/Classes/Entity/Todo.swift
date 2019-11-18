@@ -8,6 +8,11 @@
 
 import CoreData
 
+enum TodoListKey: String {
+  case id
+  case title
+}
+
 extension TodoList: Entity {
   static func entityName() -> String {
     return String(describing: self)
@@ -19,8 +24,7 @@ extension TodoList: Entity {
       return nil
     }
 
-    todo.id = json["id"] as? Int64 ?? 0
-    todo.title = json["title"] as? String
+    todo.update(json: json)
 
     return todo
   }
@@ -41,14 +45,18 @@ extension TodoList: Entity {
   }
   
   func update(json: [String : Any]) -> Entity {
-    self.id = json["id"] as? Int64 ?? 0
-    self.title = json["title"] as? String
+    for (_, data) in json.enumerated() {
+      guard let key = TodoListKey(rawValue: data.key) else { continue }
 
+      switch key {
+      case .id:
+        guard let id = data.value as? Int64 else { continue }
+        self.id = id
+      case .title:
+        guard let title = data.value as? String else { continue }
+        self.title = title
+      }
+    }
     return self
-  }
-  
-  func toJson() -> [String : Any] {
-    return ["id": self.id,
-            "title": self.title ?? ""]
   }
 }

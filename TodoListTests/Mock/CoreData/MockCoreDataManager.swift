@@ -31,14 +31,14 @@ class MockCoreDataManager: CoreDataManager {
   }
   var invokedCreateEntity = false
   var invokedCreateEntityCount = 0
-  var invokedCreateEntityParameters: (ofTyoe: Any, Void)?
-  var invokedCreateEntityParametersList = [(ofTyoe: Any, Void)]()
+  var invokedCreateEntityParameters: (ofType: Any, Void)?
+  var invokedCreateEntityParametersList = [(ofType: Any, Void)]()
   var stubbedCreateEntityResult: Any!
-  override func createEntity<T: Entity>(ofTyoe: T.Type) -> T? {
+  override func createEntity<T: Entity>(ofType: T.Type) -> T? {
     invokedCreateEntity = true
     invokedCreateEntityCount += 1
-    invokedCreateEntityParameters = (ofTyoe, ())
-    invokedCreateEntityParametersList.append((ofTyoe, ()))
+    invokedCreateEntityParameters = (ofType, ())
+    invokedCreateEntityParametersList.append((ofType, ()))
     return stubbedCreateEntityResult as? T
   }
   var invokedUpdate = false
