@@ -31,6 +31,7 @@
 		5E950A3F238282450057402A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A3E238282450057402A /* CoreDataManager.swift */; };
 		5E950A412382827E0057402A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A402382827E0057402A /* Entity.swift */; };
 		5E950A45238285030057402A /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A44238285030057402A /* Todo.swift */; };
+		5E950A4A238287320057402A /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A49238287320057402A /* MockCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		5E950A3E238282450057402A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5E950A402382827E0057402A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		5E950A44238285030057402A /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		5E950A49238287320057402A /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 		5E9509ED23827E7E0057402A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				5E950A46238287170057402A /* CoreData */,
 				5E9509EE23827E9C0057402A /* List */,
 			);
 			path = Mock;
@@ -286,6 +289,14 @@
 				5E950A3E238282450057402A /* CoreDataManager.swift */,
 			);
 			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		5E950A46238287170057402A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5E950A49238287320057402A /* MockCoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9509F423827ECB0057402A /* MockListEvent.swift in Sources */,
+				5E950A4A238287320057402A /* MockCoreDataManager.swift in Sources */,
 				5E9509F623827EE40057402A /* MockListInteractorInput.swift in Sources */,
 				5E9509F223827EAC0057402A /* MockListView.swift in Sources */,
 				5E9509F823827EF90057402A /* MockListInteractorOutput.swift in Sources */,
