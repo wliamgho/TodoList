@@ -32,7 +32,7 @@ class ListViewTests: XCTestCase {
 
   func testInitWithCoder() {
     let view = ListViewController(coder: NSCoder())
-    XCTAssertNil(view, "Expect list view controller init is not with NSCoder")
+    XCTAssertNil(view, "Expect list view controller init is not included NSCoder")
   }
 
   func testFetchTodoList() {
@@ -50,10 +50,49 @@ class ListViewTests: XCTestCase {
     XCTAssert(mockEvent?.invokedAddButtonTappedParameters?.view == view, "Expect add button param is ListViewController")
   }
 
+  func testShowTodoList() {
+    let id: Int64 = 1
+    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
+                                  TodoListKey.title.rawValue: "Test"]
+    let context = mockPersistentContainer?.container.viewContext
+
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
+     XCTFail("Failed creating TodoList Entity")
+     return
+    }
+
+    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+
+    view?.showTodoList(todoList: [todo])
+
+    XCTAssert(view?.tableView.numberOfSections == [todo].count, "Expect number of sections is same with todoList count")
+  }
+
+  func testSelectedTodoList() {
+    let id: Int64 = 1
+    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
+                                  TodoListKey.title.rawValue: "Test"]
+    let context = mockPersistentContainer?.container.viewContext
+
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
+     XCTFail("Failed creating TodoList Entity")
+     return
+    }
+
+    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+
+    view?.showTodoList(todoList: [todo])
+    view?.tableView(view?.tableView ?? UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+
+    XCTAssert(mockEvent?.invokedItemListTapped == true, "Expect item list tapped is called")
+    XCTAssert(mockEvent?.invokedItemListTappedCount == 1, "Expect item list tapped is called once")
+    XCTAssert(mockEvent?.invokedItemListTappedParameters?.todoList == todo, "Expect item list param value is same with todo")
+  }
+
   func testPerformanceExample() {
-      // This is an example of a performance test case.
-      self.measure {
-          // Put the code you want to measure the time of here.
-      }
+    // This is an example of a performance test case.
+    self.measure {
+        // Put the code you want to measure the time of here.
+    }
   }
 }

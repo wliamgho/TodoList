@@ -26,4 +26,14 @@ class MockListEvent: ListEvent {
     invokedAddButtonTappedParameters = (view, ())
     invokedAddButtonTappedParametersList.append((view, ()))
   }
+  var invokedItemListTapped = false
+  var invokedItemListTappedCount = 0
+  var invokedItemListTappedParameters: (todoList: TodoList, Void)?
+  var invokedItemListTappedParametersList = [(todoList: TodoList, Void)]()
+  func itemListTapped(todoList: TodoList) {
+    invokedItemListTapped = true
+    invokedItemListTappedCount += 1
+    invokedItemListTappedParameters = (todoList, ())
+    invokedItemListTappedParametersList.append((todoList, ()))
+  }
 }

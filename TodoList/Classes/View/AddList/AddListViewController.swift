@@ -5,7 +5,6 @@
 //  Created by William on 18/11/19.
 //  Copyright © 2019 William. All rights reserved.
 //
-
 import UIKit
 
 class AddListViewController: UIViewController, AddListView {
@@ -25,7 +24,7 @@ class AddListViewController: UIViewController, AddListView {
   required init?(coder: NSCoder) {
     return nil
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
