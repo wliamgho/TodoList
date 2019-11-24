@@ -72,7 +72,9 @@ class ListPresenterTests: XCTestCase {
 
   func testItemListTapped() {
     let mockView = MockListViewController()
-    let todoList = mockCoreDataManager?.createEntity(ofType: TodoList.self) as! TodoList
+    let mockTodoList = mockCoreDataManager?.createEntity(ofType: TodoList.self)
+
+    guard let todoList = mockTodoList else { return }
 
     presenter?.itemListTapped(todoList: todoList,
                               view: mockView)
