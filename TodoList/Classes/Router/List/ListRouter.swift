@@ -32,7 +32,6 @@ class ListRouter: Router {
 
   func presentToDetailRouter(todoList: TodoList, viewController: UIViewController?) {
     let detailListRouter = DetailListRouter(todoList: todoList)
-
     viewController?.present(detailListRouter.viewController,
                             animated: true, completion: nil)
   }

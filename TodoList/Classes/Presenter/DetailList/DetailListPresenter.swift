@@ -10,8 +10,8 @@ import Foundation
 
 class DetailListPresenter: DetailListEvent, DetailListInteractorOutput {
   weak var view: DetailListView?
-  var interactor: DetailListInteractorInput
-  var router: DetailListRouter
+  let interactor: DetailListInteractorInput
+  let router: DetailListRouter
 
   init(view: DetailListView, interactor: DetailListInteractorInput, router: DetailListRouter) {
     self.view = view

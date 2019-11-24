@@ -6,7 +6,6 @@
 //  Copyright © 2019 William. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 class CoreDataManager: NSObject {
