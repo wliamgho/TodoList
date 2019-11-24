@@ -38,8 +38,6 @@ class ListViewController: UIViewController, ListView {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-//    event?.fetchTodoList()
-
     self.navigationItem.rightBarButtonItem = addBarButton
 
     tableView.register(UINib(nibName: "ListItemCell", bundle: nil), forCellReuseIdentifier: "ListItemCell")
@@ -67,15 +65,20 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     case is ListItemCell:
       guard let cell = cell as? ListItemCell else { return }
       cell.todo = todoList[indexPath.row]
+      cell.selectionStyle = .none
     default:
       break
     }
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemCell") as? ListItemCell else {
-      return UITableViewCell()
-    }
-    return cell
+    return tableView.dequeueReusableCell(withIdentifier: "ListItemCell", for: indexPath) as! ListItemCell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+
+    let todoListItem = todoList[indexPath.row]
+    event?.itemListTapped(todoList: todoListItem)
   }
 }

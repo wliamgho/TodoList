@@ -28,6 +28,9 @@ class ListPresenter: ListEvent, ListInteractorOutput {
     router.pushToAddListRouter(viewController: view)
   }
 
+  func itemListTapped(todoList: TodoList) {
+  }
+
   // MARK: - Output
   func getTodoList(todo: [TodoList]) {
     view?.showTodoList(todoList: todo)

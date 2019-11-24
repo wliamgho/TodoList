@@ -46,14 +46,14 @@ class AddListInteractorTests: XCTestCase {
 
   func testAddNewList() {
     let id: Int64 = 1
-     let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
+    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
                                   TodoListKey.title.rawValue: "Test"]
-     let context = mockPersistentContainer?.container.viewContext
+    let context = mockPersistentContainer?.container.viewContext
 
-     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-       XCTFail("Failed creating TodoList Entity")
-       return
-     }
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
+     XCTFail("Failed creating TodoList Entity")
+     return
+    }
 
     mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
 

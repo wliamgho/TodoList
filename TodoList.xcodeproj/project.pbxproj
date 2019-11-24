@@ -210,11 +210,11 @@
 		5E9509D423827C230057402A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5E2DBEAF238275D50004F64F /* AppDelegate.swift */,
+				5E2DBEB1238275D50004F64F /* SceneDelegate.swift */,
 				5E950A892382CA5C0057402A /* Extensions */,
 				5E950A5D23829DA80057402A /* Components */,
 				5E950A3D238282350057402A /* CoreDataManager */,
-				5E2DBEAF238275D50004F64F /* AppDelegate.swift */,
-				5E2DBEB1238275D50004F64F /* SceneDelegate.swift */,
 				5E9509DA23827C560057402A /* Router */,
 				5E9509D923827C510057402A /* Entity */,
 				5E9509D823827C4D0057402A /* Presenter */,

@@ -12,4 +12,6 @@ protocol ListEvent: class {
   func fetchTodoList()
 
   func addButtonTapped(view: ListViewController)
+
+  func itemListTapped(todoList: TodoList)
 }
