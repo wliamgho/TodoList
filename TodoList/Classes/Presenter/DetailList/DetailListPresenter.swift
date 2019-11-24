@@ -13,7 +13,7 @@ class DetailListPresenter: DetailListEvent, DetailListInteractorOutput {
   var interactor: DetailListInteractorInput
   var router: DetailListRouter
 
-  init(view: DetailListView, interactor: DetailListInteractor, router: DetailListRouter) {
+  init(view: DetailListView, interactor: DetailListInteractorInput, router: DetailListRouter) {
     self.view = view
     self.interactor = interactor
     self.router = router
