@@ -28,12 +28,12 @@ class MockListEvent: ListEvent {
   }
   var invokedItemListTapped = false
   var invokedItemListTappedCount = 0
-  var invokedItemListTappedParameters: (todoList: TodoList, Void)?
-  var invokedItemListTappedParametersList = [(todoList: TodoList, Void)]()
-  func itemListTapped(todoList: TodoList) {
+  var invokedItemListTappedParameters: (todoList: TodoList, view: ListViewController)?
+  var invokedItemListTappedParametersList = [(todoList: TodoList, view: ListViewController)]()
+  func itemListTapped(todoList: TodoList, view: ListViewController) {
     invokedItemListTapped = true
     invokedItemListTappedCount += 1
-    invokedItemListTappedParameters = (todoList, ())
-    invokedItemListTappedParametersList.append((todoList, ()))
+    invokedItemListTappedParameters = (todoList, view)
+    invokedItemListTappedParametersList.append((todoList, view))
   }
 }

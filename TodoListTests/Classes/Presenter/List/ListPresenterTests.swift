@@ -70,6 +70,19 @@ class ListPresenterTests: XCTestCase {
     XCTAssert(mockRouter?.invokedPushToAddListRouterParameters?.viewController == mockView, "Expect push to add list router param is same with mockView")
   }
 
+  func testItemListTapped() {
+    let mockView = MockListViewController()
+    let todoList = mockCoreDataManager?.createEntity(ofType: TodoList.self) as! TodoList
+
+    presenter?.itemListTapped(todoList: todoList,
+                              view: mockView)
+
+    XCTAssert(mockRouter?.invokedPresentToDetailRouter == true, "Expect present to detail router is called")
+    XCTAssert(mockRouter?.invokedPresentToDetailRouterCount == 1, "Expect present to detail router is called once")
+    XCTAssert(mockRouter?.invokedPresentToDetailRouterParameters?.todoList == todoList, "Expect present to detail router param is same with todoList")
+    XCTAssert(mockRouter?.invokedPresentToDetailRouterParameters?.viewController == mockView, "Expect present to detail router param is same with mockView")
+  }
+
   func testPerformanceExample() {
       // This is an example of a performance test case.
     self.measure {

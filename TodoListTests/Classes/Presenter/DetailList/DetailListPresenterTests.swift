@@ -10,6 +10,11 @@ import XCTest
 
 @testable import TodoList
 class DetailListPresenterTests: XCTestCase {
+  var mockPersistentContainer: MockPersistentContainer?
+  var mockCoreDataManager: MockCoreDataManager?
+
+  var todoList: TodoList?
+
   var mockRouter: MockDetailListRouter?
   var mockView: MockDetailListView?
   var mockInteractor: MockDetailListInteractorInput?
@@ -18,7 +23,14 @@ class DetailListPresenterTests: XCTestCase {
 
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    mockRouter = MockDetailListRouter()
+    mockPersistentContainer = MockPersistentContainer()
+    mockCoreDataManager = MockCoreDataManager(persistentContainer: mockPersistentContainer!.container)
+
+    todoList = mockCoreDataManager?.createEntity(ofType: TodoList.self)
+
+    guard let todoList = todoList else { return }
+
+    mockRouter = MockDetailListRouter(todoList: todoList)
     mockView = MockDetailListView()
     mockInteractor = MockDetailListInteractorInput()
 

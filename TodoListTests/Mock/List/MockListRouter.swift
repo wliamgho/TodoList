@@ -28,4 +28,14 @@ class MockListRouter: ListRouter {
     invokedPushToAddListRouterParameters = (viewController, ())
     invokedPushToAddListRouterParametersList.append((viewController, ()))
   }
+  var invokedPresentToDetailRouter = false
+  var invokedPresentToDetailRouterCount = 0
+  var invokedPresentToDetailRouterParameters: (todoList: TodoList, viewController: UIViewController?)?
+  var invokedPresentToDetailRouterParametersList = [(todoList: TodoList, viewController: UIViewController?)]()
+  override func presentToDetailRouter(todoList: TodoList, viewController: UIViewController?) {
+    invokedPresentToDetailRouter = true
+    invokedPresentToDetailRouterCount += 1
+    invokedPresentToDetailRouterParameters = (todoList, viewController)
+    invokedPresentToDetailRouterParametersList.append((todoList, viewController))
+  }
 }

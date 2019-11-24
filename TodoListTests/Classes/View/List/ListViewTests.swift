@@ -87,6 +87,7 @@ class ListViewTests: XCTestCase {
     XCTAssert(mockEvent?.invokedItemListTapped == true, "Expect item list tapped is called")
     XCTAssert(mockEvent?.invokedItemListTappedCount == 1, "Expect item list tapped is called once")
     XCTAssert(mockEvent?.invokedItemListTappedParameters?.todoList == todo, "Expect item list param value is same with todo")
+    XCTAssert(mockEvent?.invokedItemListTappedParameters?.view == view, "Expect item list param value is same with view")
   }
 
   func testPerformanceExample() {

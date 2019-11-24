@@ -79,6 +79,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     tableView.deselectRow(at: indexPath, animated: true)
 
     let todoListItem = todoList[indexPath.row]
-    event?.itemListTapped(todoList: todoListItem)
+    event?.itemListTapped(todoList: todoListItem, view: self)
   }
 }
