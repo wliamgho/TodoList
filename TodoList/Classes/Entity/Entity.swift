@@ -16,7 +16,5 @@ protocol Entity {
 
   func same(entity: Entity?) -> Bool
 
-  static func newEntity(context: NSManagedObjectContext) -> Entity?
-
   func update(json: [String: Any]) -> Entity
 }

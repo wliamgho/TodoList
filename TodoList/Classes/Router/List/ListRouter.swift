@@ -25,8 +25,13 @@ class ListRouter: Router {
 
   func pushToAddListRouter(viewController: UIViewController?) {
     let addListRouter = AddListRouter()
-
     viewController?.navigationController?.pushViewController(addListRouter.viewController,
                                                             animated: true)
+  }
+
+  func presentToDetailRouter(todoList: TodoList, viewController: UIViewController?) {
+    let detailListRouter = DetailListRouter(todoList: todoList)
+    viewController?.navigationController?.present(detailListRouter.viewController,
+                                                  animated: true, completion: nil)
   }
 }

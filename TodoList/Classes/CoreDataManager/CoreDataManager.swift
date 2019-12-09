@@ -6,7 +6,6 @@
 //  Copyright © 2019 William. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 class CoreDataManager: NSObject {
@@ -20,13 +19,6 @@ class CoreDataManager: NSObject {
   func createEntity<T: Entity>(ofType: T.Type, withData data: [String: Any]) -> T? {
     let entity = T.create(json: data, context: persistentContainer.viewContext)
     return entity as? T
-  }
-
-  // MARK: - Core Data Creating Entity
-  func createEntity<T: Entity>(ofType: T.Type) -> T? {
-    let newEntity = T.newEntity(context: persistentContainer.viewContext)
-
-    return newEntity as? T
   }
 
   // MARK: - Core Data Updating Entity

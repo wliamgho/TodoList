@@ -61,11 +61,11 @@ class ListViewTests: XCTestCase {
      return
     }
 
-    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
 
     view?.showTodoList(todoList: [todo])
-
     XCTAssert(view?.tableView.numberOfSections == [todo].count, "Expect number of sections is same with todoList count")
+//    XCTAssert(view?.tableView.rowHeight == 100, "Expect tableview height is 100")
   }
 
   func testSelectedTodoList() {
@@ -79,7 +79,7 @@ class ListViewTests: XCTestCase {
      return
     }
 
-    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
 
     view?.showTodoList(todoList: [todo])
     view?.tableView(view?.tableView ?? UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
@@ -87,6 +87,7 @@ class ListViewTests: XCTestCase {
     XCTAssert(mockEvent?.invokedItemListTapped == true, "Expect item list tapped is called")
     XCTAssert(mockEvent?.invokedItemListTappedCount == 1, "Expect item list tapped is called once")
     XCTAssert(mockEvent?.invokedItemListTappedParameters?.todoList == todo, "Expect item list param value is same with todo")
+    XCTAssert(mockEvent?.invokedItemListTappedParameters?.view == view, "Expect item list param value is same with view")
   }
 
   func testPerformanceExample() {

@@ -20,4 +20,10 @@ class DetailListRouter: Router {
 
     return controller
   }
+
+  private var todoList: TodoList
+
+  init(todoList: TodoList) {
+    self.todoList = todoList
+  }
 }

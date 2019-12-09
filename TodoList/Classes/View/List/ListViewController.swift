@@ -40,7 +40,8 @@ class ListViewController: UIViewController, ListView {
 
     self.navigationItem.rightBarButtonItem = addBarButton
 
-    tableView.register(UINib(nibName: "ListItemCell", bundle: nil), forCellReuseIdentifier: "ListItemCell")
+    tableView.register(UINib(nibName: "ListItemCell", bundle: nil),
+                       forCellReuseIdentifier: "ListItemCell")
   }
 
   // MARK: - View
@@ -65,7 +66,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     case is ListItemCell:
       guard let cell = cell as? ListItemCell else { return }
       cell.todo = todoList[indexPath.row]
-      cell.selectionStyle = .none
     default:
       break
     }
@@ -79,6 +79,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     tableView.deselectRow(at: indexPath, animated: true)
 
     let todoListItem = todoList[indexPath.row]
-    event?.itemListTapped(todoList: todoListItem)
+    event?.itemListTapped(todoList: todoListItem, view: self)
+  }
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 100
   }
 }

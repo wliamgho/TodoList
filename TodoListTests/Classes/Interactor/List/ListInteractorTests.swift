@@ -41,7 +41,6 @@ class ListInteractorTests: XCTestCase {
     XCTAssert(mockOutput?.invokedGetTodoList == true, "Expect get todo list is called")
     XCTAssert(mockOutput?.invokedGetTodoListCount == 1, "Expect get todo list is called once")
     XCTAssert(mockOutput?.invokedGetTodoListParameters?.todo == todo, "Expect get todo list param is same with todo")
-//    XCTAssert(mockOutput?.invokedGetTodoListParameters?.todo.contains(todoList) ?? false, "Expect get todo list param contains todoList")
   }
 
   func testPerformanceExample() {

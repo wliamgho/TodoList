@@ -42,8 +42,8 @@ class TodoTests: XCTestCase {
     let id: Int64 = 1
     let data: [String: Any] = [:]
     let context = mockPersistentContainer?.container.viewContext
-    guard let todo = TodoList.create(json: data, context: context!) as? TodoList else {
-      XCTFail("Failed creating TodoList Entity")
+
+    guard let todo = mockCoreDataManager?.createEntity(ofType: TodoList.self, withData: data) as? TodoList else {
       return
     }
 
