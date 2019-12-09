@@ -35,7 +35,6 @@ class DetailListPresenterTests: XCTestCase {
     let context = mockPersistentContainer?.container.viewContext
 
     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-      XCTFail("Failed creating TodoList Entity")
       return
     }
 

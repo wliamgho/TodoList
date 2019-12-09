@@ -20,14 +20,16 @@ class AddListInteractor: AddListInteractorInput {
 
   // MARK: - Input
   func addTodoList(data: [String : Any]) {
-    guard let newTodoList = coreDataManager.createEntity(ofType: TodoList.self, withData: data) else {
+    guard let newTodoList = coreDataManager.createEntity(ofType: TodoList.self,
+                                                         withData: data), data.isEmpty == false else {
       // Failed to create TodoList
       output?.failedToAddNewList(errMessage: "Invalid add new list")
       return
     }
 
-    self.coreDataManager.saveContext()
     // Output
     output?.addedNewList(todoList: newTodoList)
+
+    self.coreDataManager.saveContext()
   }
 }

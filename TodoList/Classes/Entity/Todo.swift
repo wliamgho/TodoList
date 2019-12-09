@@ -28,22 +28,13 @@ extension TodoList: Entity {
 
     return todo
   }
-  
+
   func same(entity: Entity?) -> Bool {
     guard let todo = entity as? TodoList else { return false }
 
     return self.id == todo.id && self.title == todo.title
   }
-  
-  static func newEntity(context: NSManagedObjectContext) -> Entity? {
-    guard let todo = NSEntityDescription.insertNewObject(forEntityName: entityName(),
-                                                         into: context) as? TodoList else {
-        return nil
-    }
 
-    return todo
-  }
-  
   func update(json: [String : Any]) -> Entity {
     for (_, data) in json.enumerated() {
       guard let key = TodoListKey(rawValue: data.key) else { continue }

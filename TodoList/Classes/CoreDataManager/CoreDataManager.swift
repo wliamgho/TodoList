@@ -21,13 +21,6 @@ class CoreDataManager: NSObject {
     return entity as? T
   }
 
-  // MARK: - Core Data Creating Entity
-  func createEntity<T: Entity>(ofType: T.Type) -> T? {
-    let newEntity = T.newEntity(context: persistentContainer.viewContext)
-
-    return newEntity as? T
-  }
-
   // MARK: - Core Data Updating Entity
   func update<T: Entity>(entity: T, data: [String: Any]) -> T? {
     return entity.update(json: data) as? T

@@ -16,30 +16,16 @@ class MockCoreDataManager: CoreDataManager {
   var invokedEntitiesList = [[Entity]]()
   var invokedEntitiesGetter = false
   var invokedEntitiesGetterCount = 0
-  var stubbedEntities: [Entity]! = []
-  var invokedCreateEntityOfType = false
-  var invokedCreateEntityOfTypeCount = 0
-  var invokedCreateEntityOfTypeParameters: (ofType: Any, data: [String: Any])?
-  var invokedCreateEntityOfTypeParametersList = [(ofType: Any, data: [String: Any])]()
-  var stubbedCreateEntityOfTypeResult: Any!
-  override func createEntity<T: Entity>(ofType: T.Type, withData data: [String: Any]) -> T? {
-    invokedCreateEntityOfType = true
-    invokedCreateEntityOfTypeCount += 1
-    invokedCreateEntityOfTypeParameters = (ofType, data)
-    invokedCreateEntityOfTypeParametersList.append((ofType, data))
-    return stubbedCreateEntityOfTypeResult as? T
-  }
   var invokedCreateEntity = false
   var invokedCreateEntityCount = 0
-  var invokedCreateEntityParameters: (ofType: Any, Void)?
-  var invokedCreateEntityParametersList = [(ofType: Any, Void)]()
-  var stubbedCreateEntityResult: Any!
-  override func createEntity<T: Entity>(ofType: T.Type) -> T? {
+  var invokedCreateEntityParameters: (ofType: Any, data: [String: Any])?
+  var invokedCreateEntityParametersList = [(ofType: Any, data: [String: Any])]()
+  override func createEntity<T: Entity>(ofType: T.Type, withData data: [String: Any]) -> T? {
     invokedCreateEntity = true
     invokedCreateEntityCount += 1
-    invokedCreateEntityParameters = (ofType, ())
-    invokedCreateEntityParametersList.append((ofType, ()))
-    return stubbedCreateEntityResult as? T
+    invokedCreateEntityParameters = (ofType, data)
+    invokedCreateEntityParametersList.append((ofType, data))
+    return super.createEntity(ofType: ofType, withData: data)
   }
   var invokedUpdate = false
   var invokedUpdateCount = 0
@@ -51,7 +37,7 @@ class MockCoreDataManager: CoreDataManager {
     invokedUpdateCount += 1
     invokedUpdateParameters = (entity, data)
     invokedUpdateParametersList.append((entity, data))
-    return stubbedUpdateResult as? T
+    return super.update(entity: entity, data: data)
   }
   var invokedDeleteData = false
   var invokedDeleteDataCount = 0
@@ -62,6 +48,7 @@ class MockCoreDataManager: CoreDataManager {
     invokedDeleteDataCount += 1
     invokedDeleteDataParameters = (entityName, ())
     invokedDeleteDataParametersList.append((entityName, ()))
+    super.deleteData(entityName)
   }
   var invokedFetch = false
   var invokedFetchCount = 0
@@ -75,12 +62,14 @@ class MockCoreDataManager: CoreDataManager {
     invokedFetchCount += 1
     invokedFetchParameters = (ofType, predicate, sortDescriptors)
     invokedFetchParametersList.append((ofType, predicate, sortDescriptors))
-    return stubbedFetchResult as! [T]
+    
+    return super.fetch(ofType: ofType, withPredicate: predicate, sortDescriptors: sortDescriptors)
   }
   var invokedSaveContext = false
   var invokedSaveContextCount = 0
   override func saveContext() {
     invokedSaveContext = true
     invokedSaveContextCount += 1
+    super.saveContext()
   }
 }

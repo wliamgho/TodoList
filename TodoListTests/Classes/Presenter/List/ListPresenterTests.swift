@@ -79,11 +79,10 @@ class ListPresenterTests: XCTestCase {
     let context = mockPersistentContainer?.container.viewContext
 
     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-     XCTFail("Failed creating TodoList Entity")
      return
     }
 
-    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
 
     presenter?.itemListTapped(todoList: todo,
                               view: mockView)

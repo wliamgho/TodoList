@@ -42,18 +42,13 @@ class ListRouterTests: XCTestCase {
     let context = mockPersistentContainer?.container.viewContext
 
     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-     XCTFail("Failed creating TodoList Entity")
      return
     }
 
-    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
 
     let mockDetailListRouter = MockDetailListRouter(todoList: todo)
-//    let mockNavigation = MockNavigationController(rootViewController: UIViewController())
     router?.presentToDetailRouter(todoList: todo, viewController: UIViewController())
-
-//    XCTAssert(mockNavigation.invokedPresentNavigation == true, "Expect present navigation is called")
-//    XCTAssert(mockNavigation.invokedPresentNavigationCalled == 1, "Expect present navigation is called once")
   }
 
   func testPerformanceExample() {

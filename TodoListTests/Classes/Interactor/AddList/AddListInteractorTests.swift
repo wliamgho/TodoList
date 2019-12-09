@@ -36,9 +36,9 @@ class AddListInteractorTests: XCTestCase {
     let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
                                  TodoListKey.title.rawValue: "Test"]
 
-    mockCoreDataManager?.stubbedCreateEntityResult = nil
+    mockCoreDataManager?.createEntity(ofType: TodoList.self, withData: [:])
 
-    interactor?.addTodoList(data: sampleData)
+    interactor?.addTodoList(data: [:])
     XCTAssert(mockOutput?.invokedFailedToAddNewList == true, "Expect failed to add new list is called")
     XCTAssert(mockOutput?.invokedFailedToAddNewListCount == 1, "Expect failed to add new list is called once")
     XCTAssert(mockOutput?.invokedFailedToAddNewListParameters?.errMessage == "Invalid add new list", "Expect failed to add new list with error message `Invalid add new list`")
@@ -48,20 +48,18 @@ class AddListInteractorTests: XCTestCase {
     let id: Int64 = 1
     let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
                                   TodoListKey.title.rawValue: "Test"]
-    let context = mockPersistentContainer?.container.viewContext
-
-    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-     XCTFail("Failed creating TodoList Entity")
-     return
+    guard let todo = mockCoreDataManager?.createEntity(ofType: TodoList.self,
+                                                       withData: sampleData) as? TodoList else {
+      return
     }
-
-    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
 
     interactor?.addTodoList(data: sampleData)
 
+    mockCoreDataManager?.saveContext()
+
     XCTAssert(mockOutput?.invokedAddedNewList == true, "Expect added new list is called")
     XCTAssert(mockOutput?.invokedAddedNewListCount == 1, "Expect added new list is called once")
-    XCTAssert(mockOutput?.invokedAddedNewListParameters?.todoList == todo, "Expect add new list param is same with todo")
+    XCTAssert(mockOutput?.invokedAddedNewListParameters?.todoList.same(entity: todo) == true, "Expect add new list param is same with todo")
   }
 
   func testPerformanceExample() {
