@@ -72,16 +72,25 @@ class ListPresenterTests: XCTestCase {
 
   func testItemListTapped() {
     let mockView = MockListViewController()
-    let mockTodoList = mockCoreDataManager?.createEntity(ofType: TodoList.self)
 
-    guard let todoList = mockTodoList else { return }
+    let id: Int64 = 1
+    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
+                                  TodoListKey.title.rawValue: "Test"]
+    let context = mockPersistentContainer?.container.viewContext
 
-    presenter?.itemListTapped(todoList: todoList,
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
+     XCTFail("Failed creating TodoList Entity")
+     return
+    }
+
+    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+
+    presenter?.itemListTapped(todoList: todo,
                               view: mockView)
 
     XCTAssert(mockRouter?.invokedPresentToDetailRouter == true, "Expect present to detail router is called")
     XCTAssert(mockRouter?.invokedPresentToDetailRouterCount == 1, "Expect present to detail router is called once")
-    XCTAssert(mockRouter?.invokedPresentToDetailRouterParameters?.todoList == todoList, "Expect present to detail router param is same with todoList")
+    XCTAssert(mockRouter?.invokedPresentToDetailRouterParameters?.todoList == todo, "Expect present to detail router param is same with todoList")
     XCTAssert(mockRouter?.invokedPresentToDetailRouterParameters?.viewController == mockView, "Expect present to detail router param is same with mockView")
   }
 

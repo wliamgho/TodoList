@@ -10,18 +10,50 @@ import XCTest
 
 @testable import TodoList
 class ListRouterTests: XCTestCase {
+  var mockPersistentContainer: MockPersistentContainer?
+  var mockCoreDataManager: MockCoreDataManager?
+
+  var router: ListRouter?
 
   override func setUp() {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    mockPersistentContainer = MockPersistentContainer()
+    mockCoreDataManager = MockCoreDataManager(persistentContainer: mockPersistentContainer!.container)
+
+    router = ListRouter()
   }
 
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    mockCoreDataManager?.deleteData(TodoList.entityName())
   }
 
-  func testExample() {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+  func testPushToAddListRouter() {
+    let mockNavigation = MockNavigationController(rootViewController: UIViewController())
+
+    router?.pushToAddListRouter(viewController: UIViewController())
+
+    XCTAssert(mockNavigation.invokedPushNavigation == true, "Expect push navigation is called")
+    XCTAssert(mockNavigation.invokedPushNavigationCalled == 1, "Expect push navigation is called once")
+  }
+
+  func testPresentToDetailListRouter() {
+    let id: Int64 = 1
+    let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
+                                  TodoListKey.title.rawValue: "Test"]
+    let context = mockPersistentContainer?.container.viewContext
+
+    guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
+     XCTFail("Failed creating TodoList Entity")
+     return
+    }
+
+    mockCoreDataManager?.stubbedCreateEntityOfTypeResult = (todo)
+
+    let mockDetailListRouter = MockDetailListRouter(todoList: todo)
+//    let mockNavigation = MockNavigationController(rootViewController: UIViewController())
+    router?.presentToDetailRouter(todoList: todo, viewController: UIViewController())
+
+//    XCTAssert(mockNavigation.invokedPresentNavigation == true, "Expect present navigation is called")
+//    XCTAssert(mockNavigation.invokedPresentNavigationCalled == 1, "Expect present navigation is called once")
   }
 
   func testPerformanceExample() {
