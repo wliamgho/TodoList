@@ -57,15 +57,17 @@ class ListViewTests: XCTestCase {
     let context = mockPersistentContainer?.container.viewContext
 
     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-     XCTFail("Failed creating TodoList Entity")
      return
     }
 
-//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
-
     view?.showTodoList(todoList: [todo])
+    guard let cell = view?.tableView.cellForRow(at: IndexPath(row: 0,
+                                                              section: 0)) as? ListItemCell else {
+      return
+    }
+
+    cell.itemLabel.text = todo.title
     XCTAssert(view?.tableView.numberOfSections == [todo].count, "Expect number of sections is same with todoList count")
-//    XCTAssert(view?.tableView.rowHeight == 100, "Expect tableview height is 100")
   }
 
   func testSelectedTodoList() {
@@ -75,11 +77,8 @@ class ListViewTests: XCTestCase {
     let context = mockPersistentContainer?.container.viewContext
 
     guard let todo = TodoList.create(json: sampleData, context: context!) as? TodoList else {
-     XCTFail("Failed creating TodoList Entity")
      return
     }
-
-//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
 
     view?.showTodoList(todoList: [todo])
     view?.tableView(view?.tableView ?? UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))

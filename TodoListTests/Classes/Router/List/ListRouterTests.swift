@@ -27,15 +27,20 @@ class ListRouterTests: XCTestCase {
   }
 
   func testPushToAddListRouter() {
+    let mockAddListRouter = MockAddListRouter()
+    mockAddListRouter.stubbedViewController = (UIViewController())
     let mockNavigation = MockNavigationController(rootViewController: UIViewController())
 
     router?.pushToAddListRouter(viewController: UIViewController())
+    mockNavigation.invokedPushViewController = mockAddListRouter.viewController
 
     XCTAssert(mockNavigation.invokedPushNavigation == true, "Expect push navigation is called")
     XCTAssert(mockNavigation.invokedPushNavigationCalled == 1, "Expect push navigation is called once")
+    XCTAssert(mockNavigation.invokedPushViewController == mockAddListRouter.viewController, "Expected")
   }
 
   func testPresentToDetailListRouter() {
+    
     let id: Int64 = 1
     let sampleData: [String: Any] = [TodoListKey.id.rawValue: id,
                                   TodoListKey.title.rawValue: "Test"]
@@ -45,10 +50,11 @@ class ListRouterTests: XCTestCase {
      return
     }
 
-//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
+    let mockDetailListRouter = MockDetailListRouter()
 
-    let mockDetailListRouter = MockDetailListRouter(todoList: todo)
+    let mockNavigation = MockNavigationController(rootViewController: UIViewController())
     router?.presentToDetailRouter(todoList: todo, viewController: UIViewController())
+    mockNavigation.invokedPresentViewController = mockDetailListRouter.viewController
   }
 
   func testPerformanceExample() {

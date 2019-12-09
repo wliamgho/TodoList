@@ -10,8 +10,4 @@ import UIKit
 
 class DetailListViewController: UIViewController, DetailListView {
   var event: DetailListEvent?
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
 }

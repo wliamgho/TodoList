@@ -82,8 +82,6 @@ class ListPresenterTests: XCTestCase {
      return
     }
 
-//    mockCoreDataManager?.stubbedCreateEntityResult = (todo)
-
     presenter?.itemListTapped(todoList: todo,
                               view: mockView)
 

@@ -49,16 +49,6 @@
                ReferencedContainer = "container:TodoList.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E2DBECC238275D90004F64F"
-               BuildableName = "TodoListUITests.xctest"
-               BlueprintName = "TodoListUITests"
-               ReferencedContainer = "container:TodoList.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
