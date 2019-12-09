@@ -14,11 +14,13 @@ class DetailListRouter: Router {
     let interactor = DetailListInteractor(coreDataManager: coreDataManager)
     let presenter = DetailListPresenter(view: controller, interactor: interactor, router: self)
 
+    let navigationController = UINavigationController(rootViewController: controller)
+
     controller.event = presenter
     presenter.view = controller
     interactor.output = presenter
 
-    return controller
+    return navigationController
   }
 }
 
