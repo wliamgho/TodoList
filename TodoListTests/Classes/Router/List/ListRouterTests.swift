@@ -28,7 +28,6 @@ class ListRouterTests: XCTestCase {
 
   func testPushToAddListRouter() {
     let mockAddListRouter = MockAddListRouter()
-    mockAddListRouter.stubbedViewController = (UIViewController())
     let mockNavigation = MockNavigationController(rootViewController: UIViewController())
 
     router?.pushToAddListRouter(viewController: UIViewController())
@@ -36,7 +35,6 @@ class ListRouterTests: XCTestCase {
 
     XCTAssert(mockNavigation.invokedPushNavigation == true, "Expect push navigation is called")
     XCTAssert(mockNavigation.invokedPushNavigationCalled == 1, "Expect push navigation is called once")
-    XCTAssert(mockNavigation.invokedPushViewController == mockAddListRouter.viewController, "Expected")
   }
 
   func testPresentToDetailListRouter() {
@@ -51,10 +49,13 @@ class ListRouterTests: XCTestCase {
     }
 
     let mockDetailListRouter = MockDetailListRouter()
-
-    let mockNavigation = MockNavigationController(rootViewController: UIViewController())
+    let mockViewController = MockViewController()
     router?.presentToDetailRouter(todoList: todo, viewController: UIViewController())
-    mockNavigation.invokedPresentViewController = mockDetailListRouter.viewController
+
+    mockViewController.present(mockDetailListRouter.viewController, animated: true)
+
+    XCTAssert(mockViewController.invokedPresentNavigation == true, "Expect present navigation is called")
+    XCTAssert(mockViewController.invokedPresentNavigationCalled == 1, "Expect present navigation is called once")
   }
 
   func testPerformanceExample() {

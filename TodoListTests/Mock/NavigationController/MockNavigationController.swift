@@ -17,13 +17,4 @@ class MockNavigationController: UINavigationController {
       invokedPushNavigation = true
       invokedPushNavigationCalled += 1
   }
-  var invokedPresentViewController: UIViewController?
-  var invokedPresentNavigation = false
-  var invokedPresentNavigationCalled = 0
-  override func present(_ viewControllerToPresent: UIViewController,
-                        animated flag: Bool, completion: (() -> Void)? = nil) {
-    invokedPresentViewController = viewControllerToPresent
-    invokedPresentNavigation = true
-    invokedPresentNavigationCalled += 1
-  }
 }

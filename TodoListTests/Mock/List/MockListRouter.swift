@@ -10,14 +10,6 @@ import XCTest
 
 @testable import TodoList
 class MockListRouter: ListRouter {
-  var invokedViewControllerGetter = false
-  var invokedViewControllerGetterCount = 0
-  var stubbedViewController: UIViewController!
-  override var viewController: UIViewController {
-    invokedViewControllerGetter = true
-    invokedViewControllerGetterCount += 1
-    return stubbedViewController
-  }
   var invokedPushToAddListRouter = false
   var invokedPushToAddListRouterCount = 0
   var invokedPushToAddListRouterParameters: (viewController: UIViewController?, Void)?
