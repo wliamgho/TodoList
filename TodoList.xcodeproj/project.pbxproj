@@ -48,10 +48,6 @@
 		5E950A6223829DBE0057402A /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E950A6023829DBE0057402A /* ListItemCell.xib */; };
 		5E950A662382A42C0057402A /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A642382A42C0057402A /* AddListViewController.swift */; };
 		5E950A672382A42C0057402A /* AddListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E950A652382A42C0057402A /* AddListViewController.xib */; };
-		5E950A6A2382A43D0057402A /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A692382A43D0057402A /* AddListPresenter.swift */; };
-		5E950A6C2382A4430057402A /* AddListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A6B2382A4430057402A /* AddListEvent.swift */; };
-		5E950A6F2382A45D0057402A /* AddListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */; };
-		5E950A712382A4790057402A /* AddListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A702382A4790057402A /* AddListInteractor.swift */; };
 		5E950A732382A4AB0057402A /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A722382A4AB0057402A /* AddListView.swift */; };
 		5E950A762382A4E20057402A /* AddListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A752382A4E20057402A /* AddListRouter.swift */; };
 		5E950A792382A5DE0057402A /* MockAddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A782382A5DE0057402A /* MockAddListView.swift */; };
@@ -63,6 +59,10 @@
 		5E950A882382C8780057402A /* AddListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A872382C8780057402A /* AddListViewTests.swift */; };
 		5E950A8E2382CEA70057402A /* AddListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A8D2382CEA70057402A /* AddListPresenterTests.swift */; };
 		5E950A912382D0070057402A /* AddListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E950A902382D0070057402A /* AddListInteractorTests.swift */; };
+		5EA4834923BF170A00D227B1 /* AddListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4834723BF170A00D227B1 /* AddListEvent.swift */; };
+		5EA4834A23BF170A00D227B1 /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4834823BF170A00D227B1 /* AddListPresenter.swift */; };
+		5EA4834E23BF171700D227B1 /* AddListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4834C23BF171700D227B1 /* AddListInteractor.swift */; };
+		5EA4834F23BF171700D227B1 /* AddListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4834D23BF171700D227B1 /* AddListInteractorIO.swift */; };
 		5ED1BEAF239E337C000F53C8 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1BEAE239E337C000F53C8 /* MockNavigationController.swift */; };
 		5ED1BEB5239E8CE7000F53C8 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED1BEB4239E8CE7000F53C8 /* MockViewController.swift */; };
 		5EF468DE238A884600E96C6B /* MockDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF468DD238A884600E96C6B /* MockDetailListView.swift */; };
@@ -134,10 +134,6 @@
 		5E950A6023829DBE0057402A /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
 		5E950A642382A42C0057402A /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
 		5E950A652382A42C0057402A /* AddListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddListViewController.xib; sourceTree = "<group>"; };
-		5E950A692382A43D0057402A /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
-		5E950A6B2382A4430057402A /* AddListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListEvent.swift; sourceTree = "<group>"; };
-		5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListInteractorIO.swift; sourceTree = "<group>"; };
-		5E950A702382A4790057402A /* AddListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListInteractor.swift; sourceTree = "<group>"; };
 		5E950A722382A4AB0057402A /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		5E950A752382A4E20057402A /* AddListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListRouter.swift; sourceTree = "<group>"; };
 		5E950A782382A5DE0057402A /* MockAddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddListView.swift; sourceTree = "<group>"; };
@@ -149,6 +145,10 @@
 		5E950A872382C8780057402A /* AddListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewTests.swift; sourceTree = "<group>"; };
 		5E950A8D2382CEA70057402A /* AddListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenterTests.swift; sourceTree = "<group>"; };
 		5E950A902382D0070057402A /* AddListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListInteractorTests.swift; sourceTree = "<group>"; };
+		5EA4834723BF170A00D227B1 /* AddListEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListEvent.swift; sourceTree = "<group>"; };
+		5EA4834823BF170A00D227B1 /* AddListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
+		5EA4834C23BF171700D227B1 /* AddListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListInteractor.swift; sourceTree = "<group>"; };
+		5EA4834D23BF171700D227B1 /* AddListInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListInteractorIO.swift; sourceTree = "<group>"; };
 		5ED1BEAE239E337C000F53C8 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		5ED1BEB4239E8CE7000F53C8 /* MockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		5EF468DD238A884600E96C6B /* MockDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailListView.swift; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 		5E9509D723827C430057402A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				5EA4834B23BF170D00D227B1 /* AddList */,
 				5E57BB8F238A7F2F00585D54 /* DetailList */,
-				5E950A6D2382A4490057402A /* AddList */,
 				5E9509E323827CF30057402A /* List */,
 			);
 			path = Interactor;
@@ -306,8 +306,8 @@
 		5E9509D823827C4D0057402A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				5EA4834623BF16F600D227B1 /* AddList */,
 				5E57BB94238A7F5500585D54 /* DetailList */,
-				5E950A682382A4320057402A /* AddList */,
 				5E9509DE23827CC50057402A /* List */,
 			);
 			path = Presenter;
@@ -515,26 +515,6 @@
 			path = AddList;
 			sourceTree = "<group>";
 		};
-		5E950A682382A4320057402A /* AddList */ = {
-			isa = PBXGroup;
-			children = (
-				5E950A692382A43D0057402A /* AddListPresenter.swift */,
-				5E950A6B2382A4430057402A /* AddListEvent.swift */,
-			);
-			name = AddList;
-			path = ../Interactor/AddList;
-			sourceTree = "<group>";
-		};
-		5E950A6D2382A4490057402A /* AddList */ = {
-			isa = PBXGroup;
-			children = (
-				5E950A6E2382A45D0057402A /* AddListInteractorIO.swift */,
-				5E950A702382A4790057402A /* AddListInteractor.swift */,
-			);
-			name = AddList;
-			path = ../Presenter/AddList;
-			sourceTree = "<group>";
-		};
 		5E950A742382A4D50057402A /* AddList */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +578,24 @@
 			isa = PBXGroup;
 			children = (
 				5E950A902382D0070057402A /* AddListInteractorTests.swift */,
+			);
+			path = AddList;
+			sourceTree = "<group>";
+		};
+		5EA4834623BF16F600D227B1 /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5EA4834723BF170A00D227B1 /* AddListEvent.swift */,
+				5EA4834823BF170A00D227B1 /* AddListPresenter.swift */,
+			);
+			path = AddList;
+			sourceTree = "<group>";
+		};
+		5EA4834B23BF170D00D227B1 /* AddList */ = {
+			isa = PBXGroup;
+			children = (
+				5EA4834C23BF171700D227B1 /* AddListInteractor.swift */,
+				5EA4834D23BF171700D227B1 /* AddListInteractorIO.swift */,
 			);
 			path = AddList;
 			sourceTree = "<group>";
@@ -775,13 +773,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E950A6C2382A4430057402A /* AddListEvent.swift in Sources */,
 				5E9509E523827D070057402A /* ListInteractorIO.swift in Sources */,
 				5E9509E023827CCB0057402A /* ListPresenter.swift in Sources */,
 				5E9509DD23827C710057402A /* ListView.swift in Sources */,
 				5E9509E223827CDE0057402A /* ListEvent.swift in Sources */,
 				5E9509EA23827D420057402A /* Router.swift in Sources */,
 				5E950A3C238280080057402A /* TodoList.xcdatamodeld in Sources */,
+				5EA4834E23BF171700D227B1 /* AddListInteractor.swift in Sources */,
 				5E57BB98238A7F6600585D54 /* DetailListPresenter.swift in Sources */,
 				5E950A3F238282450057402A /* CoreDataManager.swift in Sources */,
 				5E950A45238285030057402A /* Todo.swift in Sources */,
@@ -791,16 +789,16 @@
 				5E9509D223827BE80057402A /* ListViewController.swift in Sources */,
 				5E950A662382A42C0057402A /* AddListViewController.swift in Sources */,
 				5E57BB9B238A7F7700585D54 /* DetailListRouter.swift in Sources */,
-				5E950A6A2382A43D0057402A /* AddListPresenter.swift in Sources */,
 				5E9509E723827D1E0057402A /* ListInteractor.swift in Sources */,
-				5E950A712382A4790057402A /* AddListInteractor.swift in Sources */,
 				5E950A412382827E0057402A /* Entity.swift in Sources */,
 				5E9509EC23827D6F0057402A /* ListRouter.swift in Sources */,
 				5E57BB96238A7F5E00585D54 /* DetailListEvent.swift in Sources */,
 				5E2DBEB2238275D50004F64F /* SceneDelegate.swift in Sources */,
-				5E950A6F2382A45D0057402A /* AddListInteractorIO.swift in Sources */,
 				5E57BB93238A7F5000585D54 /* DetailListInteractor.swift in Sources */,
+				5EA4834A23BF170A00D227B1 /* AddListPresenter.swift in Sources */,
 				5E57BB8B238A7F1F00585D54 /* DetailListViewController.swift in Sources */,
+				5EA4834923BF170A00D227B1 /* AddListEvent.swift in Sources */,
+				5EA4834F23BF171700D227B1 /* AddListInteractorIO.swift in Sources */,
 				5E950A6123829DBE0057402A /* ListItemCell.swift in Sources */,
 				5E57BB91238A7F3900585D54 /* DetailListInteractorIO.swift in Sources */,
 				5E950A732382A4AB0057402A /* AddListView.swift in Sources */,
