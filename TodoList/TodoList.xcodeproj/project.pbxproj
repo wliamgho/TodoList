@@ -8,20 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B524DAA15D00F0D613 /* AppDelegate.swift */; };
-		3DB454B824DAA15D00F0D613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B724DAA15D00F0D613 /* ViewController.swift */; };
-		3DB454BB24DAA15D00F0D613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454B924DAA15D00F0D613 /* Main.storyboard */; };
 		3DB454BD24DAA15F00F0D613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BC24DAA15F00F0D613 /* Assets.xcassets */; };
 		3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */; };
+		3DB454CE24DAA1E800F0D613 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454CC24DAA1E800F0D613 /* ListViewController.swift */; };
+		3DB454CF24DAA1E800F0D613 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454CD24DAA1E800F0D613 /* ListViewController.xib */; };
+		3DB454D324DAA1F800F0D613 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454D224DAA1F800F0D613 /* ListViewModel.swift */; };
+		3DB454D624DAA25600F0D613 /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454D524DAA25600F0D613 /* NibInstantiable.swift */; };
+		3DB454D924DAA40500F0D613 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454D824DAA40500F0D613 /* Router.swift */; };
+		3DB454DB24DAA41400F0D613 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454DA24DAA41400F0D613 /* AppRouter.swift */; };
+		3DB454DE24DAA44400F0D613 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454DD24DAA44400F0D613 /* Coordinator.swift */; };
+		3DB454E124DAA46900F0D613 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454E024DAA46900F0D613 /* AppCoordinator.swift */; };
+		3DB454E324DAA47300F0D613 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454E224DAA47300F0D613 /* AppDIContainer.swift */; };
+		3DB454E624DAA48A00F0D613 /* TodoSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454E524DAA48A00F0D613 /* TodoSceneCoordinator.swift */; };
+		3DB454EA24DAA5E400F0D613 /* TodoSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454E924DAA5E400F0D613 /* TodoSceneDIContainer.swift */; };
+		3DB454ED24DAAAEB00F0D613 /* TableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454EC24DAAAEB00F0D613 /* TableListViewController.swift */; };
+		3DB454F124DAABB500F0D613 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F024DAABB500F0D613 /* TodoRepository.swift */; };
+		3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F324DAAF4A00F0D613 /* Observable.swift */; };
+		3DB454FA24DAB01D00F0D613 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F924DAB01D00F0D613 /* TodoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DB454B224DAA15D00F0D613 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB454B524DAA15D00F0D613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DB454B724DAA15D00F0D613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3DB454BA24DAA15D00F0D613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DB454BC24DAA15F00F0D613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB454BF24DAA15F00F0D613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DB454C124DAA15F00F0D613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB454CC24DAA1E800F0D613 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3DB454CD24DAA1E800F0D613 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		3DB454D224DAA1F800F0D613 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		3DB454D524DAA25600F0D613 /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
+		3DB454D824DAA40500F0D613 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3DB454DA24DAA41400F0D613 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		3DB454DD24DAA44400F0D613 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3DB454E024DAA46900F0D613 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3DB454E224DAA47300F0D613 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		3DB454E524DAA48A00F0D613 /* TodoSceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSceneCoordinator.swift; sourceTree = "<group>"; };
+		3DB454E924DAA5E400F0D613 /* TodoSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSceneDIContainer.swift; sourceTree = "<group>"; };
+		3DB454EC24DAAAEB00F0D613 /* TableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewController.swift; sourceTree = "<group>"; };
+		3DB454F024DAABB500F0D613 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		3DB454F324DAAF4A00F0D613 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		3DB454F924DAB01D00F0D613 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +80,163 @@
 		3DB454B424DAA15D00F0D613 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				3DB454C824DAA19500F0D613 /* Application */,
+				3DB454D724DAA3FD00F0D613 /* Router */,
+				3DB454DC24DAA42900F0D613 /* Coordinator */,
+				3DB454EE24DAAB8800F0D613 /* Data */,
+				3DB454F524DAAFFA00F0D613 /* Domain */,
+				3DB454C724DAA18F00F0D613 /* Presentation */,
+				3DB454D424DAA23B00F0D613 /* Utils */,
+				3DB454CA24DAA1A900F0D613 /* Resources */,
+			);
+			path = TodoList;
+			sourceTree = "<group>";
+		};
+		3DB454C724DAA18F00F0D613 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454F224DAAF3600F0D613 /* Observable */,
+				3DB454E424DAA47F00F0D613 /* Coordinator */,
+				3DB454CB24DAA1D300F0D613 /* List */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3DB454C824DAA19500F0D613 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				3DB454B524DAA15D00F0D613 /* AppDelegate.swift */,
-				3DB454B724DAA15D00F0D613 /* ViewController.swift */,
-				3DB454B924DAA15D00F0D613 /* Main.storyboard */,
+				3DB454E024DAA46900F0D613 /* AppCoordinator.swift */,
+				3DB454DF24DAA44D00F0D613 /* DIContainer */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3DB454CA24DAA1A900F0D613 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				3DB454BC24DAA15F00F0D613 /* Assets.xcassets */,
 				3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */,
 				3DB454C124DAA15F00F0D613 /* Info.plist */,
 			);
-			path = TodoList;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3DB454CB24DAA1D300F0D613 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454D124DAA1F100F0D613 /* ViewModel */,
+				3DB454D024DAA1ED00F0D613 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3DB454D024DAA1ED00F0D613 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454EB24DAAAD100F0D613 /* TableListView */,
+				3DB454CC24DAA1E800F0D613 /* ListViewController.swift */,
+				3DB454CD24DAA1E800F0D613 /* ListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DB454D124DAA1F100F0D613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454D224DAA1F800F0D613 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DB454D424DAA23B00F0D613 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454D524DAA25600F0D613 /* NibInstantiable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3DB454D724DAA3FD00F0D613 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454D824DAA40500F0D613 /* Router.swift */,
+				3DB454DA24DAA41400F0D613 /* AppRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3DB454DC24DAA42900F0D613 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454DD24DAA44400F0D613 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3DB454DF24DAA44D00F0D613 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454E224DAA47300F0D613 /* AppDIContainer.swift */,
+				3DB454E924DAA5E400F0D613 /* TodoSceneDIContainer.swift */,
+			);
+			name = DIContainer;
+			sourceTree = "<group>";
+		};
+		3DB454E424DAA47F00F0D613 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454E524DAA48A00F0D613 /* TodoSceneCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3DB454EB24DAAAD100F0D613 /* TableListView */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454EC24DAAAEB00F0D613 /* TableListViewController.swift */,
+			);
+			path = TableListView;
+			sourceTree = "<group>";
+		};
+		3DB454EE24DAAB8800F0D613 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454EF24DAAB9900F0D613 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3DB454EF24DAAB9900F0D613 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454F024DAABB500F0D613 /* TodoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		3DB454F224DAAF3600F0D613 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454F324DAAF4A00F0D613 /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		3DB454F524DAAFFA00F0D613 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454F624DAB00500F0D613 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3DB454F624DAB00500F0D613 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454F924DAB01D00F0D613 /* TodoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +299,7 @@
 			files = (
 				3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */,
 				3DB454BD24DAA15F00F0D613 /* Assets.xcassets in Resources */,
-				3DB454BB24DAA15D00F0D613 /* Main.storyboard in Resources */,
+				3DB454CF24DAA1E800F0D613 /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +310,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DB454B824DAA15D00F0D613 /* ViewController.swift in Sources */,
+				3DB454CE24DAA1E800F0D613 /* ListViewController.swift in Sources */,
 				3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */,
+				3DB454F124DAABB500F0D613 /* TodoRepository.swift in Sources */,
+				3DB454FA24DAB01D00F0D613 /* TodoModel.swift in Sources */,
+				3DB454DB24DAA41400F0D613 /* AppRouter.swift in Sources */,
+				3DB454ED24DAAAEB00F0D613 /* TableListViewController.swift in Sources */,
+				3DB454D924DAA40500F0D613 /* Router.swift in Sources */,
+				3DB454E124DAA46900F0D613 /* AppCoordinator.swift in Sources */,
+				3DB454E624DAA48A00F0D613 /* TodoSceneCoordinator.swift in Sources */,
+				3DB454D324DAA1F800F0D613 /* ListViewModel.swift in Sources */,
+				3DB454D624DAA25600F0D613 /* NibInstantiable.swift in Sources */,
+				3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */,
+				3DB454EA24DAA5E400F0D613 /* TodoSceneDIContainer.swift in Sources */,
+				3DB454DE24DAA44400F0D613 /* Coordinator.swift in Sources */,
+				3DB454E324DAA47300F0D613 /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3DB454B924DAA15D00F0D613 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB454BA24DAA15D00F0D613 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
