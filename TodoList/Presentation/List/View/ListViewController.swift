@@ -14,6 +14,10 @@ final class ListViewController: UIViewController, NibInstantiable {
   private var viewModel: ListViewModel!
   private var listTableViewController: TableListViewController = TableListViewController(style: .plain)
 
+  
+  /// Instance class
+  /// - Parameter viewModel: ViewModel Object
+  /// - Returns: UIViewController class
   static func create(to viewModel: ListViewModel) -> ListViewController {
     let view = ListViewController.instantiateViewController()
     view.viewModel = viewModel
@@ -40,6 +44,9 @@ final class ListViewController: UIViewController, NibInstantiable {
     contentView.addSubview(listTableViewController.view)
   }
   
+  
+  /// As a propery wrappers which are designed for reference types to be shared
+  /// - Parameter viewModel: ViewModel Interface
   private func bind(to viewModel: ListViewModel) {
     viewModel.list.observe(on: self) { [weak self] _ in self?.updateItems() }
     viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading(status: $0) }

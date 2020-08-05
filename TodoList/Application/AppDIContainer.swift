@@ -8,7 +8,12 @@
 
 import Foundation
 
+/// Contains Application Container of Dependency Injection from another class
 final class AppDIContainer {
+  lazy var config = AppConfiguration()
+
+  // Instance network service
+
   func makeTodoSceneDIContainer() -> TodoSceneDIContainer {
     return TodoSceneDIContainer()
   }

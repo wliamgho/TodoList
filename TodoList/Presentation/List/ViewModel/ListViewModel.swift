@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct ListViewModelClosures {
   let showDetailView: ((TodoModel) -> Void)?
 }

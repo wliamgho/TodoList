@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0411DD24DAE92E00969778 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0411DC24DAE92E00969778 /* AppConfiguration.swift */; };
 		3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B524DAA15D00F0D613 /* AppDelegate.swift */; };
 		3DB454BD24DAA15F00F0D613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BC24DAA15F00F0D613 /* Assets.xcassets */; };
 		3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0411DC24DAE92E00969778 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		3DB454B224DAA15D00F0D613 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB454B524DAA15D00F0D613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB454BC24DAA15F00F0D613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				3DB454B524DAA15D00F0D613 /* AppDelegate.swift */,
 				3DB454E024DAA46900F0D613 /* AppCoordinator.swift */,
+				3D0411DC24DAE92E00969778 /* AppConfiguration.swift */,
 				3DB454DF24DAA44D00F0D613 /* DIContainer */,
 			);
 			path = Application;
@@ -392,6 +395,7 @@
 				3DB454D624DAA25600F0D613 /* NibInstantiable.swift in Sources */,
 				3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */,
 				3DB4551524DAE3E000F0D613 /* DetailViewModelIO.swift in Sources */,
+				3D0411DD24DAE92E00969778 /* AppConfiguration.swift in Sources */,
 				3DB454EA24DAA5E400F0D613 /* TodoSceneDIContainer.swift in Sources */,
 				3DB4550424DAB84700F0D613 /* ViewControllerExtension.swift in Sources */,
 				3DB454DE24DAA44400F0D613 /* Coordinator.swift in Sources */,
@@ -465,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -533,6 +537,8 @@
 		3DB454C524DAA15F00F0D613 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://yourapiurl.com";
+				API_KEY = PUTAPIKEYHERE;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
@@ -551,6 +557,8 @@
 		3DB454C624DAA15F00F0D613 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://yourapiurl.com";
+				API_KEY = PUTAPIKEYHERE;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
