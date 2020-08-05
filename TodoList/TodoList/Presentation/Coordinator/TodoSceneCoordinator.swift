@@ -9,7 +9,9 @@
 import Foundation
 
 protocol TodoSceneCoordinatorDependencies: class {
-  func makeListViewController() -> ListViewController
+  func makeListViewController(closures: ListViewModelClosures) -> ListViewController
+
+  func makeDetailViewController(with item: TodoModel) -> DetailViewController
 }
 
 final class TodoSceneCoordinator: BaseCoordinator {
@@ -22,7 +24,13 @@ final class TodoSceneCoordinator: BaseCoordinator {
   }
 
   override func start() {
-    let view = dependencies.makeListViewController()
-    router.setRootModule(view)
+    let closures = ListViewModelClosures(showDetailView: showDetailView(item:))
+    let view = dependencies.makeListViewController(closures: closures)
+    router.setRootModule(view, hideBar: true)
+  }
+
+  private func showDetailView(item: TodoModel) {
+    let view = dependencies.makeDetailViewController(with: item)
+    router.present(view)
   }
 }

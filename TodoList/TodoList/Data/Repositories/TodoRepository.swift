@@ -13,17 +13,14 @@ protocol TodoRepository {
 }
 
 final class DefaultTodoRepository {
-  private let data: [TodoModel]
-
-  init(data: [TodoModel]) {
-    self.data = data
-  }
+  // Init network service
 }
 
 extension DefaultTodoRepository: TodoRepository {
   func fetchTodoList(completion: @escaping (Result<[TodoModel], Error>) -> Void) {
+    let data: [TodoModel] = [TodoModel(name: "TEST 1"), TodoModel(name: "TEST 2")]
     DispatchQueue.main.async {
-      completion(.success(self.data))
+      completion(.success(data))
     }
   }
 }

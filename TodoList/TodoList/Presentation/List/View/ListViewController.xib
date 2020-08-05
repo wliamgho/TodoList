@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="267-W7-Lub" id="f2l-GU-paY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,29 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-RM-5R0">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="VNo-Eb-iDb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="267-W7-Lub">
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vLd-RM-5R0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B6d-1G-wHn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="267-W7-Lub" secondAttribute="bottom" id="FYN-2j-X9u"/>
+                <constraint firstItem="267-W7-Lub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GNT-St-bty"/>
+                <constraint firstItem="vLd-RM-5R0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HKm-tq-dlo"/>
+                <constraint firstItem="267-W7-Lub" firstAttribute="top" secondItem="vLd-RM-5R0" secondAttribute="bottom" id="HMZ-QL-4hL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="267-W7-Lub" secondAttribute="trailing" id="KGT-Ld-YJi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vLd-RM-5R0" secondAttribute="trailing" id="NS7-wf-Uaq"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

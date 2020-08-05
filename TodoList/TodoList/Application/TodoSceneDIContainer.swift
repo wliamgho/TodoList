@@ -9,23 +9,32 @@
 import Foundation
 
 final class TodoSceneDIContainer {
-  lazy var todo: [TodoModel] = [TodoModel]()
-
   func makeTodoSceneCoordinator(router: Router) -> Coordinator {
     return TodoSceneCoordinator(router: router, dependencies: self)
   }
 }
 
 extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
+  // MARK: - Repository
   func makeTodoRepository() -> TodoRepository {
-    return DefaultTodoRepository(data: todo)
+    return DefaultTodoRepository()
   }
 
-  func makeListViewModel() -> ListViewModel {
-    return DefaultListViewModel(repository: makeTodoRepository())
+  // MARK: - ViewModel
+  func makeListViewModel(closures: ListViewModelClosures) -> ListViewModel {
+    return DefaultListViewModel(repository: makeTodoRepository(), closures: closures)
   }
   
-  func makeListViewController() -> ListViewController {
-    return ListViewController.create(to: makeListViewModel())
+  func makeDetailViewModel(item: TodoModel) -> DetailViewModel {
+    return DefaultDetailViewModel(item: item)
+  }
+
+  // MARK: - View
+  func makeListViewController(closures: ListViewModelClosures) -> ListViewController {
+    return ListViewController.create(to: makeListViewModel(closures: closures))
+  }
+
+  func makeDetailViewController(with item: TodoModel) -> DetailViewController {
+    return DetailViewController.create(to: makeDetailViewModel(item: item))
   }
 }

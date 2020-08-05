@@ -8,31 +8,21 @@
 
 import Foundation
 
-enum TodoListViewModelLoading {
-  case screen
+struct ListViewModelClosures {
+  let showDetailView: ((TodoModel) -> Void)?
 }
-
-protocol ListViewModelInput: class {
-  func getTodoList()
-}
-
-protocol ListViewModelOutput: class {
-  var loading: Observable<TodoListViewModelLoading?> { get }
-  var list: Observable<[TodoModel]> { get }
-}
-
-protocol ListViewModel: ListViewModelInput, ListViewModelOutput {}
-
 
 final class DefaultListViewModel: ListViewModel {
   private let repository: TodoRepository
+  private let closures: ListViewModelClosures?
 
   // MARK: - Output
   let loading: Observable<TodoListViewModelLoading?> = Observable(.none)
   let list: Observable<[TodoModel]> = Observable([])
 
-  init(repository: TodoRepository) {
+  init(repository: TodoRepository, closures: ListViewModelClosures? = nil) {
     self.repository = repository
+    self.closures = closures
   }
 
   private func load(loading: TodoListViewModelLoading) {
@@ -52,8 +42,13 @@ final class DefaultListViewModel: ListViewModel {
   }
 }
 
+// MARK: - Input
 extension DefaultListViewModel: ListViewModelInput {
   func getTodoList() {
     load(loading: .screen)
+  }
+
+  func itemDidSelect(item: TodoModel) {
+    closures?.showDetailView?(item)
   }
 }

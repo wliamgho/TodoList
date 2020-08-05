@@ -25,6 +25,14 @@
 		3DB454F124DAABB500F0D613 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F024DAABB500F0D613 /* TodoRepository.swift */; };
 		3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F324DAAF4A00F0D613 /* Observable.swift */; };
 		3DB454FA24DAB01D00F0D613 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454F924DAB01D00F0D613 /* TodoModel.swift */; };
+		3DB4550024DAB63400F0D613 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454FE24DAB63400F0D613 /* ListItemCell.swift */; };
+		3DB4550124DAB63400F0D613 /* ListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454FF24DAB63400F0D613 /* ListItemCell.xib */; };
+		3DB4550424DAB84700F0D613 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4550324DAB84700F0D613 /* ViewControllerExtension.swift */; };
+		3DB4550924DAE22B00F0D613 /* ListViewModelIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4550824DAE22B00F0D613 /* ListViewModelIO.swift */; };
+		3DB4550D24DAE3AF00F0D613 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4550B24DAE3AF00F0D613 /* DetailViewController.swift */; };
+		3DB4550E24DAE3AF00F0D613 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB4550C24DAE3AF00F0D613 /* DetailViewController.xib */; };
+		3DB4551324DAE3DA00F0D613 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4551224DAE3DA00F0D613 /* DetailViewModel.swift */; };
+		3DB4551524DAE3E000F0D613 /* DetailViewModelIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB4551424DAE3E000F0D613 /* DetailViewModelIO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,14 @@
 		3DB454F024DAABB500F0D613 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		3DB454F324DAAF4A00F0D613 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		3DB454F924DAB01D00F0D613 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		3DB454FE24DAB63400F0D613 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		3DB454FF24DAB63400F0D613 /* ListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemCell.xib; sourceTree = "<group>"; };
+		3DB4550324DAB84700F0D613 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		3DB4550824DAE22B00F0D613 /* ListViewModelIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelIO.swift; sourceTree = "<group>"; };
+		3DB4550B24DAE3AF00F0D613 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3DB4550C24DAE3AF00F0D613 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		3DB4551224DAE3DA00F0D613 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		3DB4551424DAE3E000F0D613 /* DetailViewModelIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelIO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +114,7 @@
 				3DB454F224DAAF3600F0D613 /* Observable */,
 				3DB454E424DAA47F00F0D613 /* Coordinator */,
 				3DB454CB24DAA1D300F0D613 /* List */,
+				3DB4550A24DAE39C00F0D613 /* Detail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -134,9 +151,10 @@
 		3DB454D024DAA1ED00F0D613 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3DB454EB24DAAAD100F0D613 /* TableListView */,
 				3DB454CC24DAA1E800F0D613 /* ListViewController.swift */,
 				3DB454CD24DAA1E800F0D613 /* ListViewController.xib */,
+				3DB454FB24DAB60D00F0D613 /* Cell */,
+				3DB454EB24DAAAD100F0D613 /* TableListView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB454D224DAA1F800F0D613 /* ListViewModel.swift */,
+				3DB4550824DAE22B00F0D613 /* ListViewModelIO.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -152,6 +171,7 @@
 		3DB454D424DAA23B00F0D613 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3DB4550224DAB83800F0D613 /* Extensions */,
 				3DB454D524DAA25600F0D613 /* NibInstantiable.swift */,
 			);
 			path = Utils;
@@ -239,6 +259,50 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3DB454FB24DAB60D00F0D613 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454FE24DAB63400F0D613 /* ListItemCell.swift */,
+				3DB454FF24DAB63400F0D613 /* ListItemCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3DB4550224DAB83800F0D613 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4550324DAB84700F0D613 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DB4550A24DAE39C00F0D613 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4551124DAE3C900F0D613 /* ViewModel */,
+				3DB4551024DAE3C400F0D613 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3DB4551024DAE3C400F0D613 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4550B24DAE3AF00F0D613 /* DetailViewController.swift */,
+				3DB4550C24DAE3AF00F0D613 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DB4551124DAE3C900F0D613 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DB4551224DAE3DA00F0D613 /* DetailViewModel.swift */,
+				3DB4551424DAE3E000F0D613 /* DetailViewModelIO.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,7 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB4550124DAB63400F0D613 /* ListItemCell.xib in Resources */,
 				3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */,
+				3DB4550E24DAE3AF00F0D613 /* DetailViewController.xib in Resources */,
 				3DB454BD24DAA15F00F0D613 /* Assets.xcassets in Resources */,
 				3DB454CF24DAA1E800F0D613 /* ListViewController.xib in Resources */,
 			);
@@ -313,17 +379,23 @@
 				3DB454CE24DAA1E800F0D613 /* ListViewController.swift in Sources */,
 				3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */,
 				3DB454F124DAABB500F0D613 /* TodoRepository.swift in Sources */,
+				3DB4551324DAE3DA00F0D613 /* DetailViewModel.swift in Sources */,
 				3DB454FA24DAB01D00F0D613 /* TodoModel.swift in Sources */,
 				3DB454DB24DAA41400F0D613 /* AppRouter.swift in Sources */,
 				3DB454ED24DAAAEB00F0D613 /* TableListViewController.swift in Sources */,
 				3DB454D924DAA40500F0D613 /* Router.swift in Sources */,
 				3DB454E124DAA46900F0D613 /* AppCoordinator.swift in Sources */,
+				3DB4550024DAB63400F0D613 /* ListItemCell.swift in Sources */,
 				3DB454E624DAA48A00F0D613 /* TodoSceneCoordinator.swift in Sources */,
+				3DB4550D24DAE3AF00F0D613 /* DetailViewController.swift in Sources */,
 				3DB454D324DAA1F800F0D613 /* ListViewModel.swift in Sources */,
 				3DB454D624DAA25600F0D613 /* NibInstantiable.swift in Sources */,
 				3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */,
+				3DB4551524DAE3E000F0D613 /* DetailViewModelIO.swift in Sources */,
 				3DB454EA24DAA5E400F0D613 /* TodoSceneDIContainer.swift in Sources */,
+				3DB4550424DAB84700F0D613 /* ViewControllerExtension.swift in Sources */,
 				3DB454DE24DAA44400F0D613 /* Coordinator.swift in Sources */,
+				3DB4550924DAE22B00F0D613 /* ListViewModelIO.swift in Sources */,
 				3DB454E324DAA47300F0D613 /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

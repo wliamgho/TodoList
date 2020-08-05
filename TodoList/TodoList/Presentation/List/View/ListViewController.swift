@@ -9,8 +9,10 @@
 import UIKit
 
 final class ListViewController: UIViewController, NibInstantiable {
+  @IBOutlet weak var contentView: UIView!
+
   private var viewModel: ListViewModel!
-  private var listTableView: TableListViewController!
+  private var listTableViewController: TableListViewController = TableListViewController(style: .plain)
 
   static func create(to viewModel: ListViewModel) -> ListViewController {
     let view = ListViewController.instantiateViewController()
@@ -21,10 +23,23 @@ final class ListViewController: UIViewController, NibInstantiable {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    configureLayout()
+    
     viewModel?.getTodoList()
     bind(to: viewModel)
   }
 
+  private func configureLayout() {
+    self.addChild(listTableViewController)
+
+    listTableViewController.didMove(toParent: self)
+    listTableViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    listTableViewController.view.frame = contentView.bounds
+    listTableViewController.viewModel = viewModel
+
+    contentView.addSubview(listTableViewController.view)
+  }
+  
   private func bind(to viewModel: ListViewModel) {
     viewModel.list.observe(on: self) { [weak self] _ in self?.updateItems() }
     viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading(status: $0) }
@@ -32,6 +47,7 @@ final class ListViewController: UIViewController, NibInstantiable {
 
   private func updateItems() {
     // reload table
+    listTableViewController.reload()
   }
 
   private func updateLoading(status: TodoListViewModelLoading?) {
