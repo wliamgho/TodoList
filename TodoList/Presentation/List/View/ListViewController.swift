@@ -28,7 +28,7 @@ final class ListViewController: UIViewController, NibInstantiable {
     super.viewDidLoad()
 
     configureLayout()
-    
+
     viewModel?.getTodoList()
     bind(to: viewModel)
   }
@@ -48,13 +48,27 @@ final class ListViewController: UIViewController, NibInstantiable {
   /// As a propery wrappers which are designed for reference types to be shared
   /// - Parameter viewModel: ViewModel Interface
   private func bind(to viewModel: ListViewModel) {
-    viewModel.list.observe(on: self) { [weak self] _ in self?.updateItems() }
-    viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading(status: $0) }
+//    viewModel.list.observe(on: self) { [weak self] _ in self?.updateItems() }
+//    viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading(status: $0) }
+//    viewModel.state.observe(on: self) { [weak self] _ in
+//      self?.updateItems(state: )
+//      self?.updateItems(state: $0)
+//    }
+    viewModel.state.observe(on: self) { [weak self] (test) in self?.updateItems(state: test) }
   }
 
-  private func updateItems() {
-    // reload table
-    listTableViewController.reload()
+  private func updateItems(state: LoadingStateViewModel.State) {
+    switch state {
+    case .initialize:
+      print("IS INITIALIZE")
+    case .loading:
+      print("IS LOADING")
+    case .success:
+      print("IS SUCCESS")
+    case .failed:
+      print("IS FAILED")
+    }
+    
   }
 
   private func updateLoading(status: TodoListViewModelLoading?) {

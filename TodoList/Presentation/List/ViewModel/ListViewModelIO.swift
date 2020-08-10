@@ -8,18 +8,14 @@
 
 import Foundation
 
-enum TodoListViewModelLoading {
-  case screen
-}
-
 protocol ListViewModelInput: class {
   func getTodoList()
   func itemDidSelect(item: TodoModel)
 }
 
 protocol ListViewModelOutput: class {
-  var loading: Observable<TodoListViewModelLoading?> { get }
-  var list: Observable<[TodoModel]> { get }
+//  var state: Observable<TodoListViewModelState?> { get }
+  var state: Observable<LoadingStateViewModel.State> { get }
 }
 
 protocol ListViewModel: ListViewModelInput, ListViewModelOutput {}

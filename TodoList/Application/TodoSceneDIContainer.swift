@@ -22,9 +22,10 @@ extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
 
   // MARK: - ViewModel
   func makeListViewModel(closures: ListViewModelClosures) -> ListViewModel {
-    return DefaultListViewModel(repository: makeTodoRepository(), closures: closures)
+    return DefaultListViewModel(repository: makeTodoRepository(),
+                                closures: closures)
   }
-  
+
   func makeDetailViewModel(item: TodoModel) -> DetailViewModel {
     return DefaultDetailViewModel(item: item)
   }

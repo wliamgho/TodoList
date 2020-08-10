@@ -9,7 +9,7 @@
 import Foundation
 
 public final class Observable<Value> {
-  
+
   struct Observer<Value> {
     weak var observer: AnyObject?
     let block: (Value) -> Void
