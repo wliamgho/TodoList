@@ -10,7 +10,8 @@ import UIKit
 
 final class ListViewController: UIViewController, NibInstantiable {
   @IBOutlet weak var contentView: UIView!
-
+  @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+  
   private var viewModel: ListViewModel!
   private var listTableViewController: TableListViewController = TableListViewController(style: .plain)
 
@@ -43,32 +44,31 @@ final class ListViewController: UIViewController, NibInstantiable {
 
     contentView.addSubview(listTableViewController.view)
   }
-  
-  
+
   /// As a propery wrappers which are designed for reference types to be shared
   /// - Parameter viewModel: ViewModel Interface
   private func bind(to viewModel: ListViewModel) {
-//    viewModel.list.observe(on: self) { [weak self] _ in self?.updateItems() }
-//    viewModel.loading.observe(on: self) { [weak self] in self?.updateLoading(status: $0) }
-//    viewModel.state.observe(on: self) { [weak self] _ in
-//      self?.updateItems(state: )
-//      self?.updateItems(state: $0)
-//    }
-    viewModel.state.observe(on: self) { [weak self] (test) in self?.updateItems(state: test) }
+    viewModel.state.observe(on: self) { [weak self] state in self?.updateItems(state: state) }
   }
 
-  private func updateItems(state: LoadingStateViewModel.State) {
+  private func updateItems(state: LoadingState<[TodoModel], Error>) {
     switch state {
-    case .initialize:
-      print("IS INITIALIZE")
-    case .loading:
+    case .idle:
+      print("IDLE")
+    case .loading(_):
       print("IS LOADING")
-    case .success:
-      print("IS SUCCESS")
-    case .failed:
-      print("IS FAILED")
+      indicatorView.startAnimating()
+      indicatorView.hidesWhenStopped = false
+    case .loaded(let data):
+      print("SUCCESS", data)
+      indicatorView.stopAnimating()
+      indicatorView.hidesWhenStopped = true
+      listTableViewController.reload()
+    case .error(let error):
+      print("ERROR", error)
+      indicatorView.stopAnimating()
+      indicatorView.hidesWhenStopped = true
     }
-    
   }
 
   private func updateLoading(status: TodoListViewModelLoading?) {

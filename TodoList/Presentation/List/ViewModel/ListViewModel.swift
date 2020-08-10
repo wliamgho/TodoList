@@ -17,7 +17,8 @@ final class DefaultListViewModel: ListViewModel {
   private let closures: ListViewModelClosures?
 
   // MARK: - Output
-  var state: Observable<LoadingStateViewModel.State> = Observable(.initialize)
+//  var state: Observable<LoadingStateViewModel.State> = Observable(.initialize)
+  var state: Observable<LoadingState<[TodoModel], Error>> = Observable(.loading(nil))
 
   init(repository: TodoRepository, closures: ListViewModelClosures? = nil) {
     self.repository = repository
@@ -26,22 +27,14 @@ final class DefaultListViewModel: ListViewModel {
 
   // TODOs: - Refactor here
   private func load(loading: TodoListViewModelLoading) {
-//    self.state.value?.state = .loading(state: loading)
-    self.state.value = .loading
     self.repository.fetchTodoList(completion: { result in
       switch result {
       case .success(let data):
         // Append Data
-//        self.list.value = data
-        self.state.value = .success
-      case .failure(_):
-        // Error here
-        fatalError("ERROR FETCH TODO LIST")
-        self.state.value = .failed
+        self.state.value = .loaded(data)
+      case .failure(let error):
+        self.state.value = .error(error)
       }
-//      self.loading.value = .none
-//      self.state.value?.value = .fetch(result)
-      
     })
   }
 }
