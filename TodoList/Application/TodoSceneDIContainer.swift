@@ -30,6 +30,10 @@ extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
     return DefaultDetailViewModel(item: item)
   }
 
+  func makeAddViewModel() -> AddViewModel {
+    return DefaultAddViewModel()
+  }
+
   // MARK: - View
   func makeListViewController(closures: ListViewModelClosures) -> ListViewController {
     return ListViewController.create(to: makeListViewModel(closures: closures))
@@ -37,5 +41,9 @@ extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
 
   func makeDetailViewController(with item: TodoModel) -> DetailViewController {
     return DetailViewController.create(to: makeDetailViewModel(item: item))
+  }
+
+  func makeAddViewController() -> AddViewController {
+    return AddViewController.create(to: makeAddViewModel())
   }
 }

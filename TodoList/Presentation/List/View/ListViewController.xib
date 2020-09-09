@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
+                <outlet property="addBarButton" destination="SQe-hd-JWP" id="Wp8-I4-MLn"/>
                 <outlet property="contentView" destination="267-W7-Lub" id="f2l-GU-paY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,5 +44,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="127"/>
         </view>
+        <barButtonItem systemItem="add" id="SQe-hd-JWP">
+            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <action selector="addButtonTapped:" destination="-1" id="o6H-bk-vMg"/>
+            </connections>
+        </barButtonItem>
     </objects>
 </document>

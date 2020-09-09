@@ -10,6 +10,7 @@ import UIKit
 
 final class ListViewController: UIViewController, NibInstantiable {
   @IBOutlet weak var contentView: UIView!
+  @IBOutlet var addBarButton: UIBarButtonItem!
   
   private var viewModel: ListViewModel!
   private var listTableViewController: TableListViewController = TableListViewController(style: .plain)
@@ -23,9 +24,16 @@ final class ListViewController: UIViewController, NibInstantiable {
     return view
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    navigationItem.title = "ToDo"
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.navigationItem.rightBarButtonItem = addBarButton
     configureLayout()
 
     viewModel?.getTodoList()
@@ -58,4 +66,9 @@ final class ListViewController: UIViewController, NibInstantiable {
       return
     }
   }
+
+  @IBAction func addButtonTapped(_ sender: Any) {
+    viewModel.addTodoItem()
+  }
+  
 }

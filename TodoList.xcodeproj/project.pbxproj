@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D0411DD24DAE92E00969778 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0411DC24DAE92E00969778 /* AppConfiguration.swift */; };
 		3D5B527824DC06B0006018BE /* ListViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B527724DC06B0006018BE /* ListViewModelState.swift */; };
-		3D5B527C24DC3C37006018BE /* LoadingViewStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5B527B24DC3C37006018BE /* LoadingViewStateModel.swift */; };
 		3D7BB82624E03355009C6618 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7BB82524E03355009C6618 /* DataState.swift */; };
+		3D82C59D2508B472002FA122 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C59B2508B472002FA122 /* AddViewController.swift */; };
+		3D82C59E2508B472002FA122 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D82C59C2508B472002FA122 /* AddViewController.xib */; };
+		3D82C5A32508B4DE002FA122 /* AddViewModelIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C5A22508B4DE002FA122 /* AddViewModelIO.swift */; };
+		3D82C5A52508B4E5002FA122 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D82C5A42508B4E5002FA122 /* AddViewModel.swift */; };
 		3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B524DAA15D00F0D613 /* AppDelegate.swift */; };
 		3DB454BD24DAA15F00F0D613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BC24DAA15F00F0D613 /* Assets.xcassets */; };
 		3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */; };
@@ -42,8 +45,11 @@
 /* Begin PBXFileReference section */
 		3D0411DC24DAE92E00969778 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		3D5B527724DC06B0006018BE /* ListViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelState.swift; sourceTree = "<group>"; };
-		3D5B527B24DC3C37006018BE /* LoadingViewStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewStateModel.swift; sourceTree = "<group>"; };
 		3D7BB82524E03355009C6618 /* DataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		3D82C59B2508B472002FA122 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		3D82C59C2508B472002FA122 /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		3D82C5A22508B4DE002FA122 /* AddViewModelIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModelIO.swift; sourceTree = "<group>"; };
+		3D82C5A42508B4E5002FA122 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		3DB454B224DAA15D00F0D613 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB454B524DAA15D00F0D613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB454BC24DAA15F00F0D613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +99,25 @@
 			path = StoreState;
 			sourceTree = "<group>";
 		};
+		3D82C5982508B3C0002FA122 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				3D82C59F2508B4CB002FA122 /* View */,
+				3D82C5A22508B4DE002FA122 /* AddViewModelIO.swift */,
+				3D82C5A42508B4E5002FA122 /* AddViewModel.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		3D82C59F2508B4CB002FA122 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D82C59B2508B472002FA122 /* AddViewController.swift */,
+				3D82C59C2508B472002FA122 /* AddViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3DB454A924DAA15D00F0D613 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,7 @@
 				3DB454E424DAA47F00F0D613 /* Coordinator */,
 				3DB454CB24DAA1D300F0D613 /* List */,
 				3DB4550A24DAE39C00F0D613 /* Detail */,
+				3D82C5982508B3C0002FA122 /* Add */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -274,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				3DB454F924DAB01D00F0D613 /* TodoModel.swift */,
-				3D5B527B24DC3C37006018BE /* LoadingViewStateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D82C59E2508B472002FA122 /* AddViewController.xib in Resources */,
 				3DB4550124DAB63400F0D613 /* ListItemCell.xib in Resources */,
 				3DB454C024DAA15F00F0D613 /* LaunchScreen.storyboard in Resources */,
 				3DB4550E24DAE3AF00F0D613 /* DetailViewController.xib in Resources */,
@@ -402,16 +428,17 @@
 				3DB4551324DAE3DA00F0D613 /* DetailViewModel.swift in Sources */,
 				3DB454FA24DAB01D00F0D613 /* TodoModel.swift in Sources */,
 				3DB454DB24DAA41400F0D613 /* AppRouter.swift in Sources */,
+				3D82C5A52508B4E5002FA122 /* AddViewModel.swift in Sources */,
 				3DB454ED24DAAAEB00F0D613 /* TableListViewController.swift in Sources */,
 				3DB454D924DAA40500F0D613 /* Router.swift in Sources */,
 				3D5B527824DC06B0006018BE /* ListViewModelState.swift in Sources */,
-				3D5B527C24DC3C37006018BE /* LoadingViewStateModel.swift in Sources */,
 				3DB454E124DAA46900F0D613 /* AppCoordinator.swift in Sources */,
 				3DB4550024DAB63400F0D613 /* ListItemCell.swift in Sources */,
 				3DB454E624DAA48A00F0D613 /* TodoSceneCoordinator.swift in Sources */,
 				3DB4550D24DAE3AF00F0D613 /* DetailViewController.swift in Sources */,
 				3DB454D324DAA1F800F0D613 /* ListViewModel.swift in Sources */,
 				3DB454D624DAA25600F0D613 /* NibInstantiable.swift in Sources */,
+				3D82C59D2508B472002FA122 /* AddViewController.swift in Sources */,
 				3DB454F424DAAF4A00F0D613 /* Observable.swift in Sources */,
 				3DB4551524DAE3E000F0D613 /* DetailViewModelIO.swift in Sources */,
 				3D7BB82624E03355009C6618 /* DataState.swift in Sources */,
@@ -420,6 +447,7 @@
 				3DB4550424DAB84700F0D613 /* ViewControllerExtension.swift in Sources */,
 				3DB454DE24DAA44400F0D613 /* Coordinator.swift in Sources */,
 				3DB4550924DAE22B00F0D613 /* ListViewModelIO.swift in Sources */,
+				3D82C5A32508B4DE002FA122 /* AddViewModelIO.swift in Sources */,
 				3DB454E324DAA47300F0D613 /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

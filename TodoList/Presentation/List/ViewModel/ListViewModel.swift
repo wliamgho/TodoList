@@ -10,6 +10,8 @@ import Foundation
 
 struct ListViewModelClosures {
   let showDetailView: ((TodoModel) -> Void)?
+
+  let showAddItemView: (() -> Void)?
 }
 
 final class DefaultListViewModel: ListViewModel {
@@ -40,6 +42,10 @@ final class DefaultListViewModel: ListViewModel {
 
 // MARK: - Input
 extension DefaultListViewModel: ListViewModelInput {
+  func addTodoItem() {
+    closures?.showAddItemView?()
+  }
+  
   func getTodoList() {
     load(loading: .screen)
   }

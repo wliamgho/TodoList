@@ -19,7 +19,6 @@ final class DefaultTodoRepository {
 extension DefaultTodoRepository: TodoRepository {
   func fetchTodoList(completion: @escaping (Result<[TodoModel], Error>) -> Void) {
     let data: [TodoModel] = [TodoModel(name: "TEST 1"), TodoModel(name: "TEST 2")]
-//    let data: [TodoModel] = [TodoModel]()
     DispatchQueue.main.async {
       completion(.success(data))
     }

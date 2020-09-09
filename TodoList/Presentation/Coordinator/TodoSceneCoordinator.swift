@@ -12,6 +12,8 @@ protocol TodoSceneCoordinatorDependencies: class {
   func makeListViewController(closures: ListViewModelClosures) -> ListViewController
 
   func makeDetailViewController(with item: TodoModel) -> DetailViewController
+
+  func makeAddViewController() -> AddViewController
 }
 
 final class TodoSceneCoordinator: BaseCoordinator {
@@ -24,13 +26,18 @@ final class TodoSceneCoordinator: BaseCoordinator {
   }
 
   override func start() {
-    let closures = ListViewModelClosures(showDetailView: showDetailView(item:))
+    let closures = ListViewModelClosures(showDetailView: showDetailView(item:), showAddItemView: addTodoItemView)
     let view = dependencies.makeListViewController(closures: closures)
     router.setRootModule(view)
   }
 
   private func showDetailView(item: TodoModel) {
     let view = dependencies.makeDetailViewController(with: item)
+    router.push(view)
+  }
+
+  private func addTodoItemView() {
+    let view = dependencies.makeAddViewController()
     router.push(view)
   }
 }

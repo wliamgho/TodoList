@@ -11,6 +11,7 @@ import Foundation
 protocol ListViewModelInput: class {
   func getTodoList()
   func itemDidSelect(item: TodoModel)
+  func addTodoItem()
 }
 
 protocol ListViewModelOutput: class {
