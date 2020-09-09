@@ -17,7 +17,7 @@ final class DefaultListViewModel: ListViewModel {
   private let closures: ListViewModelClosures?
 
   // MARK: - Output
-  var state: Observable<LoadingState<[TodoModel], Error>> = Observable(.loading(nil))
+  var state: Observable<DataState<[TodoModel], Error>> = Observable(.loading(nil))
 
   init(repository: TodoRepository, closures: ListViewModelClosures? = nil) {
     self.repository = repository
@@ -30,7 +30,7 @@ final class DefaultListViewModel: ListViewModel {
       switch result {
       case .success(let data):
         // Append Data
-        self.state.value = .loaded(data)
+        self.state.value = .success(data)
       case .failure(let error):
         self.state.value = .error(error)
       }

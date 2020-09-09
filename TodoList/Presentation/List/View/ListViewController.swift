@@ -10,11 +10,9 @@ import UIKit
 
 final class ListViewController: UIViewController, NibInstantiable {
   @IBOutlet weak var contentView: UIView!
-  @IBOutlet weak var indicatorView: UIActivityIndicatorView!
   
   private var viewModel: ListViewModel!
   private var listTableViewController: TableListViewController = TableListViewController(style: .plain)
-
   
   /// Instance class
   /// - Parameter viewModel: ViewModel Object
@@ -51,23 +49,13 @@ final class ListViewController: UIViewController, NibInstantiable {
     viewModel.state.observe(on: self) { [weak self] state in self?.updateItems(state: state) }
   }
 
-  private func updateItems(state: LoadingState<[TodoModel], Error>) {
+  private func updateItems(state: DataState<[TodoModel], Error>) {
     switch state {
-    case .idle:
-      print("IDLE")
-    case .loading(_):
-      print("IS LOADING")
-      indicatorView.startAnimating()
-      indicatorView.hidesWhenStopped = false
-    case .loaded(let data):
+    case .success(let data):
       print("SUCCESS", data)
-      indicatorView.stopAnimating()
-      indicatorView.hidesWhenStopped = true
       listTableViewController.reload()
-    case .error(let error):
-      print("ERROR", error)
-      indicatorView.stopAnimating()
-      indicatorView.hidesWhenStopped = true
+    default:
+      return
     }
   }
 }

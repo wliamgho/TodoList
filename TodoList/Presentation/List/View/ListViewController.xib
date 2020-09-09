@@ -10,7 +10,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="267-W7-Lub" id="f2l-GU-paY"/>
-                <outlet property="indicatorView" destination="SjW-0o-v2c" id="UyW-ny-Sw0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,10 +29,6 @@
                     <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SjW-0o-v2c">
-                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -42,10 +37,8 @@
                 <constraint firstItem="267-W7-Lub" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GNT-St-bty"/>
                 <constraint firstItem="vLd-RM-5R0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HKm-tq-dlo"/>
                 <constraint firstItem="267-W7-Lub" firstAttribute="top" secondItem="vLd-RM-5R0" secondAttribute="bottom" id="HMZ-QL-4hL"/>
-                <constraint firstItem="SjW-0o-v2c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J94-0k-vqE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="267-W7-Lub" secondAttribute="trailing" id="KGT-Ld-YJi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vLd-RM-5R0" secondAttribute="trailing" id="NS7-wf-Uaq"/>
-                <constraint firstItem="SjW-0o-v2c" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oDG-90-VTQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="127"/>

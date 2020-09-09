@@ -26,11 +26,11 @@ final class TodoSceneCoordinator: BaseCoordinator {
   override func start() {
     let closures = ListViewModelClosures(showDetailView: showDetailView(item:))
     let view = dependencies.makeListViewController(closures: closures)
-    router.setRootModule(view, hideBar: true)
+    router.setRootModule(view)
   }
 
   private func showDetailView(item: TodoModel) {
     let view = dependencies.makeDetailViewController(with: item)
-    router.present(view)
+    router.push(view)
   }
 }

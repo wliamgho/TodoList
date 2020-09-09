@@ -1,5 +1,5 @@
 //
-//  LoadingState.swift
+//  DataState.swift
 //  TodoList
 //
 //  Created by William on 09/08/20.
@@ -17,22 +17,8 @@ public extension Equatable where Self: StoreState {
   }
 }
 
-public enum LoadingState<T, E: Error>: StoreState {
-  case idle
+public enum DataState<T, E: Error>: StoreState {
   case loading(T?)
-  case loaded(T)
+  case success(T)
   case error(E)
-}
-
-struct LoadingStateViewModel {
-  enum State<T, E: Error> {
-    case initialize
-    case loading
-    case success
-    case failed
-  }
-
-  var state: State<[TodoModel], Error>
-
-  func getLoaded() {}
 }

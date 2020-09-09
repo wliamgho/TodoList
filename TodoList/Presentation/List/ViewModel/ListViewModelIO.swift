@@ -14,7 +14,7 @@ protocol ListViewModelInput: class {
 }
 
 protocol ListViewModelOutput: class {
-  var state: Observable<LoadingState<[TodoModel], Error>> { get }
+  var state: Observable<DataState<[TodoModel], Error>> { get }
 }
 
 protocol ListViewModel: ListViewModelInput, ListViewModelOutput {}
