@@ -25,10 +25,14 @@ public enum LoadingState<T, E: Error>: StoreState {
 }
 
 struct LoadingStateViewModel {
-  enum State {
+  enum State<T, E: Error> {
     case initialize
     case loading
     case success
     case failed
   }
+
+  var state: State<[TodoModel], Error>
+
+  func getLoaded() {}
 }

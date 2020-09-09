@@ -70,8 +70,4 @@ final class ListViewController: UIViewController, NibInstantiable {
       indicatorView.hidesWhenStopped = true
     }
   }
-
-  private func updateLoading(status: TodoListViewModelLoading?) {
-    // Set loading
-  }
 }

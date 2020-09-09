@@ -17,7 +17,6 @@ final class DefaultListViewModel: ListViewModel {
   private let closures: ListViewModelClosures?
 
   // MARK: - Output
-//  var state: Observable<LoadingStateViewModel.State> = Observable(.initialize)
   var state: Observable<LoadingState<[TodoModel], Error>> = Observable(.loading(nil))
 
   init(repository: TodoRepository, closures: ListViewModelClosures? = nil) {

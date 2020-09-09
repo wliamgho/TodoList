@@ -20,8 +20,7 @@ class TableListViewController: UITableViewController {
 
     tableView.estimatedRowHeight = 64
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.register(UINib(nibName: ListItemCell.reuseIdentifier(),
-                             bundle:  nil),
+    tableView.register(UINib(nibName: ListItemCell.reuseIdentifier(), bundle:  nil),
                        forCellReuseIdentifier: ListItemCell.reuseIdentifier())
   }
 
@@ -62,6 +61,7 @@ class TableListViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
 
+    let state = viewModel.state.value
 //    viewModel.itemDidSelect(item: viewModel.list.value[indexPath.row])
   }
 }
