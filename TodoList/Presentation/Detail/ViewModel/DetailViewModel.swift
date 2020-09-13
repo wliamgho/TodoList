@@ -12,6 +12,6 @@ final class DefaultDetailViewModel: DetailViewModel {
   var name: String
 
   init(item: TodoModel) {
-    self.name = item.name
+    self.name = item.todo
   }
 }

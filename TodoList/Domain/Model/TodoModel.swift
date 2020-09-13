@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct TodoModel: Codable {
-  let name: String
+class TodoModel {
+  let todo: String
+  let date: String
+
+  init(todo: String, date: String) {
+    self.todo = todo
+    self.date = date
+  }
 }
 

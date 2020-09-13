@@ -9,6 +9,9 @@
 import Foundation
 
 final class TodoSceneDIContainer {
+  var todo: [TodoModel] = [TodoModel]()
+//  var todo = [TodoModel(todo: "Test", date: "Date test")]
+
   func makeTodoSceneCoordinator(router: Router) -> Coordinator {
     return TodoSceneCoordinator(router: router, dependencies: self)
   }
@@ -17,7 +20,7 @@ final class TodoSceneDIContainer {
 extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
   // MARK: - Repository
   func makeTodoRepository() -> TodoRepository {
-    return DefaultTodoRepository()
+    return DefaultTodoRepository(todo: todo)
   }
 
   // MARK: - ViewModel
@@ -30,8 +33,8 @@ extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
     return DefaultDetailViewModel(item: item)
   }
 
-  func makeAddViewModel() -> AddViewModel {
-    return DefaultAddViewModel()
+  func makeAddViewModel(todo: [TodoModel]) -> AddViewModel {
+    return DefaultAddViewModel(repository: makeTodoRepository())
   }
 
   // MARK: - View
@@ -43,7 +46,7 @@ extension TodoSceneDIContainer: TodoSceneCoordinatorDependencies {
     return DetailViewController.create(to: makeDetailViewModel(item: item))
   }
 
-  func makeAddViewController() -> AddViewController {
-    return AddViewController.create(to: makeAddViewModel())
+  func makeAddViewController(with todo: [TodoModel]) -> AddViewController {
+    return AddViewController.create(to: makeAddViewModel(todo: todo))
   }
 }

@@ -58,6 +58,7 @@ class TableListViewController: UITableViewController {
     let value = viewModel.state.value
     switch value {
     case .success(let data): // Success fetch
+      print("SUCCESS", data.count)
       tableView.separatorStyle = .singleLine
       loadingView.stopAnimating()
       return data.count

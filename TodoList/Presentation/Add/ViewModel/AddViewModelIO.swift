@@ -6,7 +6,9 @@
 //  Copyright © 2020 william. All rights reserved.
 //
 
-protocol AddViewModelInput: class {}
+protocol AddViewModelInput: class {
+  func addTodoItem(todo: TodoModel, completion: @escaping(Result<Void, Error>) -> Void)
+}
 
 protocol AddViewModelOutput: class {
 }

@@ -12,7 +12,7 @@ class ListItemCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
 
   func listData(list: TodoModel) {
-    titleLabel.text = list.name
+    titleLabel.text = list.todo
   }
 
   static func reuseIdentifier() -> String {

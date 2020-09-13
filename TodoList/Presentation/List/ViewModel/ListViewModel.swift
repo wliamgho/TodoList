@@ -11,7 +11,7 @@ import Foundation
 struct ListViewModelClosures {
   let showDetailView: ((TodoModel) -> Void)?
 
-  let showAddItemView: (() -> Void)?
+  let showAddItemView: (([TodoModel]) -> Void)?
 }
 
 final class DefaultListViewModel: ListViewModel {
@@ -20,6 +20,8 @@ final class DefaultListViewModel: ListViewModel {
 
   // MARK: - Output
   var state: Observable<DataState<[TodoModel], Error>> = Observable(.loading(nil))
+
+  var todo: [TodoModel]!
 
   init(repository: TodoRepository, closures: ListViewModelClosures? = nil) {
     self.repository = repository
@@ -33,6 +35,7 @@ final class DefaultListViewModel: ListViewModel {
       case .success(let data):
         // Append Data
         self.state.value = .success(data)
+        self.todo = data
       case .failure(let error):
         self.state.value = .error(error)
       }
@@ -43,9 +46,9 @@ final class DefaultListViewModel: ListViewModel {
 // MARK: - Input
 extension DefaultListViewModel: ListViewModelInput {
   func addTodoItem() {
-    closures?.showAddItemView?()
+    closures?.showAddItemView?(todo)
   }
-  
+
   func getTodoList() {
     load(loading: .screen)
   }
