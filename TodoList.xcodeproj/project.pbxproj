@@ -10,6 +10,7 @@
 		3C23DA5E44E2C1EEC38E5A76 /* Pods_TodoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B7698709CD14E22956A5729 /* Pods_TodoList.framework */; };
 		3DB22C4125DCCC3300DCE33A /* TodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB22C4025DCCC3300DCE33A /* TodoListTests.swift */; };
 		3DB22C6625DCCF1800DCE33A /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DB22C6425DCCF1800DCE33A /* TodoList.xcdatamodeld */; };
+		3DB22C7825DCD0A500DCE33A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB22C7725DCD0A500DCE33A /* CoreDataManager.swift */; };
 		3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B524DAA15D00F0D613 /* AppDelegate.swift */; };
 		3DB454B824DAA15D00F0D613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB454B724DAA15D00F0D613 /* ViewController.swift */; };
 		3DB454BB24DAA15D00F0D613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB454B924DAA15D00F0D613 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		3DB22C4025DCCC3300DCE33A /* TodoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTests.swift; sourceTree = "<group>"; };
 		3DB22C4225DCCC3300DCE33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB22C6525DCCF1800DCE33A /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
+		3DB22C7725DCD0A500DCE33A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3DB454B224DAA15D00F0D613 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB454B524DAA15D00F0D613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB454B724DAA15D00F0D613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,41 @@
 			path = TodoListTests;
 			sourceTree = "<group>";
 		};
+		3DB22C7B25DCD12600DCE33A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */,
+				3DB454BC24DAA15F00F0D613 /* Assets.xcassets */,
+				3DB454C124DAA15F00F0D613 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3DB22C7F25DCD14D00DCE33A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DB22C8025DCD16000DCE33A /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3DB22C8025DCD16000DCE33A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3DB22C7725DCD0A500DCE33A /* CoreDataManager.swift */,
+				3DB22C6425DCCF1800DCE33A /* TodoList.xcdatamodeld */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3DB22C8125DCD16E00DCE33A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3DB454B524DAA15D00F0D613 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		3DB454A924DAA15D00F0D613 = {
 			isa = PBXGroup;
 			children = (
@@ -100,13 +137,11 @@
 		3DB454B424DAA15D00F0D613 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				3DB454B524DAA15D00F0D613 /* AppDelegate.swift */,
+				3DB22C8125DCD16E00DCE33A /* Application */,
+				3DB22C7F25DCD14D00DCE33A /* Data */,
 				3DB454B724DAA15D00F0D613 /* ViewController.swift */,
 				3DB454B924DAA15D00F0D613 /* Main.storyboard */,
-				3DB454BC24DAA15F00F0D613 /* Assets.xcassets */,
-				3DB454BE24DAA15F00F0D613 /* LaunchScreen.storyboard */,
-				3DB454C124DAA15F00F0D613 /* Info.plist */,
-				3DB22C6425DCCF1800DCE33A /* TodoList.xcdatamodeld */,
+				3DB22C7B25DCD12600DCE33A /* Resources */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -309,6 +344,7 @@
 			files = (
 				3DB454B824DAA15D00F0D613 /* ViewController.swift in Sources */,
 				3DB454B624DAA15D00F0D613 /* AppDelegate.swift in Sources */,
+				3DB22C7825DCD0A500DCE33A /* CoreDataManager.swift in Sources */,
 				3DB22C6625DCCF1800DCE33A /* TodoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
