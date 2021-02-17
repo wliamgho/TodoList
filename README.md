@@ -1,2 +1,2 @@
 # TodoList
-Sample TodoList using Viper Architecture with TDD
+Sample TodoList using RxSwift.
