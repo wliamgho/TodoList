@@ -6,6 +6,7 @@ use_frameworks!
 def frameworks
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
+  pod 'SnapKit', '~> 5.0.0'
 end
 
 def test_frameworks
@@ -15,7 +16,6 @@ end
 
 target 'TodoList' do
   frameworks
-  
 
   # Pods for TodoList
   target 'TodoListTests' do
