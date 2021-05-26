@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-
+use_frameworks!
 
 def frameworks
   pod 'RxSwift', '6.1.0'
@@ -14,12 +14,13 @@ def test_frameworks
 end
 
 target 'TodoList' do
-  use_frameworks!
   frameworks
-end
+  
 
-target 'TodoListTests' do
-  inherit! :search_paths
-  frameworks
-  test_frameworks
+  # Pods for TodoList
+  target 'TodoListTests' do
+    inherit! :search_paths
+    # Pods for testing
+    test_frameworks
+  end
 end
