@@ -1,2 +1,2 @@
 # TodoList
-Sample TodoList using RxSwift.
+Sample TodoList using RxSwift and MVVM architecture.
